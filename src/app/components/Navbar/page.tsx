@@ -81,7 +81,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-md rounded-lg mt-2">
-              {['Home', 'About Us', 'History', 'Contact', 'Blog'].map((item) => (
+              {['Home', 'About', 'History', 'Contact', 'Blog'].map((item) => (
                 <Link
                   key={item}
                   href={`/${item === 'Home' ? '' : item.toLowerCase().replace(' ', '')}`}

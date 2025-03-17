@@ -26,12 +26,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-    <Navbar/>
-      {children}
-    <Footer/>
-    </body>
-  </html>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
+        <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/background-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="relative z-10">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
+      </body>
+    </html>
   );
 }

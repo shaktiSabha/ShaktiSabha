@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -26,9 +27,9 @@ const page = () => {
             <p className="text-gray-600 mb-4">
               Read our latest articles on women empowerment, leadership, and personal growth.
             </p>
-            <a href="/blog/[blogid]" className="text-gray-800 hover:text-gray-600 font-medium">
+            <Link href="/blog/[blogid]" className="text-gray-800 hover:text-gray-600 font-medium">
               Read More →
-            </a>
+            </Link>
           </div>
 
           {/* Success Stories Section */}
@@ -37,9 +38,9 @@ const page = () => {
             <p className="text-gray-600 mb-4">
               Inspiring stories of women who have overcome challenges and achieved their goals.
             </p>
-            <a href="/success-stories" className="text-gray-800 hover:text-gray-600 font-medium">
+            <Link href="/success-stories" className="text-gray-800 hover:text-gray-600 font-medium">
               Read More →
-            </a>
+            </Link>
           </div>
 
           {/* Support Groups Section */}
@@ -48,21 +49,21 @@ const page = () => {
             <p className="text-gray-600 mb-4">
               Join our supportive community groups and connect with like-minded women.
             </p>
-            <a href="/support-groups" className="text-gray-800 hover:text-gray-600 font-medium">
+            <Link href="/support-groups" className="text-gray-800 hover:text-gray-600 font-medium">
               Join Now →
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="mt-12 text-center">
           <div className="space-x-4">
-            <a href="/privacy" className="text-gray-600 hover:text-gray-800 transition-colors duration-300">
+            <Link href="/privacy" className="text-gray-600 hover:text-gray-800 transition-colors duration-300">
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-gray-400">|</span>
-            <a href="/terms" className="text-gray-600 hover:text-gray-800 transition-colors duration-300">
+            <Link href="/terms" className="text-gray-600 hover:text-gray-800 transition-colors duration-300">
               Terms and Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>

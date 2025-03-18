@@ -10,7 +10,7 @@ const HistoryPage: React.FC = () => {
   return (
     <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold text-center text-white mb-12 mt-16 hover:scale-105 transition-transform duration-300">
+        <h1 className="text-2xl font-bold text-center text-white mb-12 mt-16 hover:scale-105 transition-transform duration-300">
           History of Women Empowerment
         </h1>
         

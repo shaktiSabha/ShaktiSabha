@@ -30,7 +30,7 @@ const ContactPage = () => {
     <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-300 mt-10">Contact Us</h1>
+          <h1 className="text-6xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-300 mt-20">Contact Us</h1>
           <p className="text-xl text-gray-200">Get in touch with us for any queries or suggestions</p>
         </div>
 

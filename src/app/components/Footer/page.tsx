@@ -19,30 +19,30 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-transparent to-black text-white py-16">
+    <footer className="bg-gradient-to-b from-gray-900/60 to-gray-900/80 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 relative">
         {/* Decorative element */}
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-purple-500/10 rounded-lg blur-xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-gray-400/10 rounded-lg blur-xl" />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start relative">
           {/* Logo & Copyright Section */}
           <div className="text-center md:text-left space-y-6">
             <div className="space-y-4">
-              <h3 className="text-4xl font-bold bg-gradient-to-r from-red-300 to-white bg-clip-text text-transparent">
+              <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
                 Shakti Sabha
               </h3>
-              <p className="text-red-100/80">
+              <p className="text-gray-300/80">
                 &copy; {currentYear} All Rights Reserved.
               </p>
             </div>
-            <p className="text-sm text-red-200/90 max-w-xs mx-auto md:mx-0">
+            <p className="text-sm text-gray-400/90 max-w-xs mx-auto md:mx-0">
               Empowering Women, Enriching Lives Through Unity and Strength
             </p>
           </div>
 
           {/* Social Media Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-center text-red-200">Connect With Us</h4>
+            <h4 className="text-lg font-semibold text-center text-gray-300">Connect With Us</h4>
             <div className="flex justify-center gap-6">
               {[
                 { href: "https://facebook.com", label: "Facebook" },
@@ -59,7 +59,7 @@ const Footer = () => {
                   className="p-3 rounded-full hover:bg-white/10 transition-all duration-300 group"
                 >
                   <svg 
-                    className="w-6 h-6 text-red-200 group-hover:text-white transition-colors duration-300" 
+                    className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
                   >
@@ -72,7 +72,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="text-center md:text-right space-y-6">
-            <h4 className="text-lg font-semibold text-red-200">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-gray-300">Quick Links</h4>
             <div className="flex flex-col gap-4">
               {[
                 { href: "/privacy", label: "Privacy Policy" },
@@ -83,14 +83,14 @@ const Footer = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-red-100/80 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                  className="text-gray-400/80 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
-            <div className="pt-6 border-t border-red-200/10">
-              <p className="text-sm text-red-200/80">
+            <div className="pt-6 border-t border-gray-600/10">
+              <p className="text-sm text-gray-400/80">
                 Made with ❤️ for women empowerment
               </p>
             </div>

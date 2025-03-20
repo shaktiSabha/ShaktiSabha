@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/services/psychological-empowerment/page": "app/services/psychological-empowerment/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
-}

@@ -1,4 +1,4 @@
-
+"use client";
 import Link from 'next/link';
 
 const navigationItems = [
@@ -99,7 +99,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
-"use client"; // Ensure this is a client component
+ // Ensure this is a client component
 
 import { useState } from "react";
 import Link from "next/link";

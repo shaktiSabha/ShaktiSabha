@@ -2,40 +2,64 @@ import React from 'react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn more about Shakti Sabha and our mission to empower women'
+  title: 'About Us - Shakti Sabha',
+  description: 'Breaking barriers, building warriors - Learn about our mission to empower women'
 }
 
 const about = () => {
   return (
     <div className="min-h-screen relative">      
       <main className="relative z-10 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 ">
-          <h1 className="text-5xl font-bold text-white mb-6 mt-10">About Us</h1>
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-10 hover:scale-105 transition-transform duration-300">
+            About Us
+          </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Shakti Sabha is dedicated to empowering women through education, counseling, and community support.
+            We are more than an organization - we are a movement of women supporting women, 
+            turning challenges into opportunities and fears into strength.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1">
-            <h2 className="text-2xl font-semibold text-white mb-4">Our Mission</h2>
-            <p className="text-gray-200 leading-relaxed">
-              To create a supportive environment where women can thrive, learn, and achieve their full potential.
+          {/* Mission Card */}
+          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 
+              hover:bg-white/20 transition-all hover:scale-105 hover:rotate-1 group">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto 
+                group-hover:bg-white/20 transition-all">
+              <span className="text-3xl">⚔️</span>
+            </div>
+            <h2 className="text-2xl font-semibold text-white mb-4 text-center">Our Mission</h2>
+            <p className="text-gray-200 leading-relaxed text-center">
+              Breaking Barriers, Building Warriors. We transform women through education, 
+              self-defense training, and psychological empowerment.
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1">
-            <h2 className="text-2xl font-semibold text-white mb-4">Our Vision</h2>
-            <p className="text-gray-200 leading-relaxed">
-              A world where every woman has equal opportunities and the confidence to pursue her dreams.
+          {/* Vision Card */}
+          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 
+              hover:bg-white/20 transition-all hover:scale-105 hover:-rotate-1 group">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto 
+                group-hover:bg-white/20 transition-all">
+              <span className="text-3xl">🌟</span>
+            </div>
+            <h2 className="text-2xl font-semibold text-white mb-4 text-center">Our Vision</h2>
+            <p className="text-gray-200 leading-relaxed text-center">
+              A World Where Women Fear Nothing. Where every woman walks with confidence, 
+              speaks with power, and lives without boundaries.
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1">
-            <h2 className="text-2xl font-semibold text-white mb-4">Our Values</h2>
-            <p className="text-gray-200 leading-relaxed">
-              Empowerment, Education, Support, Community, and Inclusivity guide everything we do.
+          {/* Impact Card */}
+          <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 
+              hover:bg-white/20 transition-all hover:scale-105 hover:rotate-1 group">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto 
+                group-hover:bg-white/20 transition-all">
+              <span className="text-3xl">💪</span>
+            </div>
+            <h2 className="text-2xl font-semibold text-white mb-4 text-center">Our Impact</h2>
+            <p className="text-gray-200 leading-relaxed text-center">
+              Real Women, Real Power. Our community of warriors grows stronger every day, 
+              supporting and inspiring each other to reach new heights.
             </p>
           </div>
         </div>

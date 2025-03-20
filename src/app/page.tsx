@@ -1,5 +1,63 @@
 import React from 'react'
 import Carousel from './components/Carousel/page'
+import Link from 'next/link';
+
+const services = [
+  {
+    icon: "🌟",
+    title: "Psychological and Emotional Empowerment",
+    description: "Supporting mental wellbeing and emotional growth through expert guidance",
+    href: "/services/psychological-empowerment"
+  },
+  {
+    icon: "💝",
+    title: "Counseling Services",
+    description: "Professional counseling and support for your journey",
+    href: "/services/counseling"
+  },
+  {
+    icon: "👥",
+    title: "Community Platform",
+    description: "Connect and grow with like-minded women",
+    href: "/services/community-platform"
+  },
+  {
+    icon: "🎯",
+    title: "Webinars and Workshops",
+    description: "Interactive learning experiences for personal growth",
+    href: "/services/webinars-workshops"
+  },
+  {
+    icon: "🤝",
+    title: "Support Groups",
+    description: "Safe spaces for sharing and healing together",
+    href: "/services/support-groups"
+  },
+  {
+    icon: "📚",
+    title: "Online Courses",
+    description: "Comprehensive learning resources for skill development",
+    href: "/services/online-courses"
+  },
+  {
+    icon: "🧘‍♀️",
+    title: "Healthy Lifestyle",
+    description: "Wellness programs and fitness guidance for a balanced life",
+    href: "/services/healthy-lifestyle"
+  },
+  {
+    icon: "👩‍👩‍👧‍👦",
+    title: "For Specific Groups",
+    description: "Tailored support for young women, mothers, and professionals",
+    href: "/services/specific-groups"
+  },
+  {
+    icon: "🎧",
+    title: "Podcasts and Media",
+    description: "Inspiring content and educational resources on-the-go",
+    href: "/services/podcasts-media"
+  }
+];
 
 const page = () => {
   return (
@@ -20,77 +78,27 @@ const page = () => {
             <Carousel/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">🌟</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Psychological and Emotional Empowerment</h3>
-            <p className="text-gray-300 text-center">Supporting mental wellbeing and emotional growth through expert guidance</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">💝</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Counseling Services</h3>
-            <p className="text-gray-300 text-center">Professional counseling and support for your journey</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">👥</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Community Platform</h3>
-            <p className="text-gray-300 text-center">Connect and grow with like-minded women</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">🎯</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Webinars and Workshops</h3>
-            <p className="text-gray-300 text-center">Interactive learning experiences for personal growth</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">🤝</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Support Groups</h3>
-            <p className="text-gray-300 text-center">Safe spaces for sharing and healing together</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">📚</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Online Courses</h3>
-            <p className="text-gray-300 text-center">Comprehensive learning resources for skill development</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">🧘‍♀️</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Healthy Lifestyle</h3>
-            <p className="text-gray-300 text-center">Wellness programs and fitness guidance for a balanced life</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">👩‍👩‍👧‍👦</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">For Specific Groups</h3>
-            <p className="text-gray-300 text-center">Tailored support for young women, mothers, and professionals</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <span className="text-3xl">🎧</span>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Podcasts and Media</h3>
-            <p className="text-gray-300 text-center">Inspiring content and educational resources on-the-go</p>
-          </div>
+          {services.map((service, index) => (
+            <Link 
+              key={index}
+              href={service.href}
+              className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border 
+                border-white/20 shadow-xl hover:shadow-2xl transition-all 
+                duration-300 transform hover:-translate-y-2 group"
+            >
+              <div className="w-16 h-16 bg-violet-500/20 rounded-full 
+                flex items-center justify-center mb-6 mx-auto 
+                group-hover:bg-violet-500/30 transition-colors duration-300">
+                <span className="text-3xl">{service.icon}</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">
+                {service.title}
+              </h3>
+              <p className="text-gray-300 text-center">
+                {service.description}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </main>

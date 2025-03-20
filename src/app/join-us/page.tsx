@@ -7,6 +7,30 @@ export const metadata: Metadata = {
 };
 
 const JoinUsPage = () => {
+  const involvementOptions = [
+    {
+      title: "Become a Warrior",
+      description: "Join our membership program and access exclusive resources, training, and community support",
+      icon: "⚔️",
+      action: "Join Now",
+      primary: true
+    },
+    {
+      title: "Volunteer With Us",
+      description: "Share your skills and time to help empower other women in our community",
+      icon: "🤝",
+      action: "Apply Now",
+      primary: false
+    },
+    {
+      title: "Donate to Empower",
+      description: "Support our mission to provide free self-defense training and crisis support",
+      icon: "💝",
+      action: "Donate",
+      primary: false
+    }
+  ];
+
   return (
     <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -36,6 +60,38 @@ const JoinUsPage = () => {
                 transition-all duration-300 shadow-lg">
               JOIN THE MOVEMENT
             </button>
+          </div>
+
+          {/* Get Involved Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">Get Involved</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {involvementOptions.map((option, index) => (
+                <div 
+                  key={index}
+                  className={`bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg 
+                    hover:shadow-2xl transition-all duration-300 
+                    border border-white/10 text-center
+                    ${option.primary ? 'hover:bg-white/30' : 'hover:bg-white/20'}`}
+                >
+                  <div className="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-full 
+                    flex items-center justify-center text-3xl">
+                    {option.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
+                  <p className="text-gray-300 mb-6">{option.description}</p>
+                  <button 
+                    className={`px-6 py-3 rounded-lg font-bold transition-all duration-300
+                      ${option.primary 
+                        ? 'bg-white text-gray-900 hover:bg-gray-200' 
+                        : 'bg-white/10 text-white hover:bg-white/20'
+                      } transform hover:scale-105`}
+                  >
+                    {option.action}
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Benefits Grid */}

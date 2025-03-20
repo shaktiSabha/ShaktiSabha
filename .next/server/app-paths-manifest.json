@@ -1,12 +1,6 @@
 {
   "/page": "app/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/learn-and-empower/page": "app/learn-and-empower/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/community/page": "app/community/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/blog-&-media/page": "app/blog-&-media/page.js",
-  "/shop/page": "app/shop/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/join-us/page": "app/join-us/page.js"
+  "/services/psychological-empowerment/page": "app/services/psychological-empowerment/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

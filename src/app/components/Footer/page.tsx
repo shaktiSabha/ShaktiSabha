@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,31 +20,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900/60 to-gray-900/80 text-white py-16">
+    <footer className="bg-black/30 backdrop-blur-sm text-white py-12">
       <div className="max-w-7xl mx-auto px-4 relative">
-        {/* Decorative element */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-gray-400/10 rounded-lg blur-xl" />
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo & Copyright Section */}
-          <div className="text-center md:text-left space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          <div className="text-center md:text-left space-y-4">
+            <div className="space-y-3">
+              <h3 className="text-3xl font-bold text-white">
                 Shakti Sabha
               </h3>
-              <p className="text-gray-300/80">
+              <p className="text-gray-300">
                 &copy; {currentYear} All Rights Reserved.
               </p>
             </div>
-            <p className="text-sm text-gray-400/90 max-w-xs mx-auto md:mx-0">
+            <p className="text-sm text-gray-300 max-w-xs mx-auto md:mx-0">
               Empowering Women, Enriching Lives Through Unity and Strength
             </p>
           </div>
 
           {/* Social Media Links */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-center text-gray-300">Connect With Us</h4>
-            <div className="flex justify-center gap-6">
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-center text-white">Connect With Us</h4>
+            <div className="flex justify-center gap-4">
               {[
                 { href: "https://facebook.com", label: "Facebook" },
                 { href: "https://twitter.com", label: "Twitter" },
@@ -56,10 +54,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-3 rounded-full hover:bg-white/10 transition-all duration-300 group"
+                  className="p-2 rounded-full hover:bg-white/10 transition-all duration-300 group"
                 >
                   <svg 
-                    className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" 
+                    className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
                   >
@@ -71,26 +69,27 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="text-center md:text-right space-y-6">
-            <h4 className="text-lg font-semibold text-gray-300">Quick Links</h4>
-            <div className="flex flex-col gap-4">
+          <div className="text-center md:text-right space-y-4">
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+            <div className="flex flex-col gap-2">
               {[
                 { href: "/privacy", label: "Privacy Policy" },
                 { href: "/terms", label: "Terms & Conditions" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact" }
               ].map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
-                  className="text-gray-400/80 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 
+                    hover:translate-x-1 transform inline-block"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
-            <div className="pt-6 border-t border-gray-600/10">
-              <p className="text-sm text-gray-400/80">
+            <div className="pt-4 border-t border-white/10">
+              <p className="text-sm text-gray-300">
                 Made with ❤️ for women empowerment
               </p>
             </div>

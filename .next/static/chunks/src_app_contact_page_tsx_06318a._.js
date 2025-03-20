@@ -9,14 +9,10 @@ __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/image.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_refresh__.signature();
 "use client";
-;
-;
 ;
 const ContactPage = ()=>{
     _s();
@@ -28,7 +24,7 @@ const ContactPage = ()=>{
     });
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        console.log(formData);
+    // Add form submission logic here
     };
     const handleChange = (e)=>{
         setFormData({
@@ -37,24 +33,24 @@ const ContactPage = ()=>{
         });
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative min-h-screen py-12 px-4 sm:px-6 lg:px-8",
+        className: "relative min-h-screen py-20 px-4 sm:px-6 lg:px-8",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-7xl mx-auto",
+            className: "max-w-4xl mx-auto",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-12",
+                    className: "text-center mb-16",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-6xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-300 mt-20",
-                            children: "Contact Us"
+                            className: "text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-rose-400    to-pink-600 text-transparent bg-clip-text transform hover:scale-105    transition-all duration-300",
+                            children: "Get in Touch"
                         }, void 0, false, {
                             fileName: "[project]/src/app/contact/page.tsx",
-                            lineNumber: 33,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xl text-gray-200",
-                            children: "Get in touch with us for any queries or suggestions"
+                            className: "text-xl text-rose-100/80 max-w-2xl mx-auto",
+                            children: "Have questions or need support? We're here to help you 24/7"
                         }, void 0, false, {
                             fileName: "[project]/src/app/contact/page.tsx",
                             lineNumber: 34,
@@ -63,411 +59,193 @@ const ContactPage = ()=>{
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/contact/page.tsx",
-                    lineNumber: 32,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 md:grid-cols-2 gap-8",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg    hover:shadow-2xl hover:bg-white/20 hover:scale-105   transition-all duration-300 border border-white/10",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-2xl font-semibold mb-6 text-white hover:text-pink-300",
-                                    children: "Contact Information"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/contact/page.tsx",
-                                    lineNumber: 42,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-6",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-start space-x-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-6 h-6 opacity-70",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: "/icons/location.svg",
-                                                        alt: "Location",
-                                                        fill: true,
-                                                        className: "object-contain"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/contact/page.tsx",
-                                                        lineNumber: 47,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 46,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-lg font-medium text-white",
-                                                            children: "Address"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 50,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-gray-200",
-                                                            children: "123 Shakti Sabha Street, City, State, PIN"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 51,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 49,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 45,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-start space-x-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-6 h-6 opacity-70",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: "/icons/phone.svg",
-                                                        alt: "Phone",
-                                                        fill: true,
-                                                        className: "object-contain"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/contact/page.tsx",
-                                                        lineNumber: 57,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 56,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-lg font-medium text-white",
-                                                            children: "Phone"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 60,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-gray-200",
-                                                            children: "+91 1234567890"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 61,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 59,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 55,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-start space-x-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-6 h-6 opacity-70",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: "/icons/email.svg",
-                                                        alt: "Email",
-                                                        fill: true,
-                                                        className: "object-contain"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/contact/page.tsx",
-                                                        lineNumber: 67,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 66,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-lg font-medium text-white",
-                                                            children: "Email"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 70,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-gray-200",
-                                                            children: "contact@shaktisabha.org"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 71,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 69,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 65,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mt-8",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-lg font-medium text-white mb-3",
-                                                    children: "Social Media"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 76,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex space-x-6",
-                                                    children: [
-                                                        'facebook',
-                                                        'twitter',
-                                                        'instagram'
-                                                    ].map((social)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                            href: `https://${social}.com/shaktisabha`,
-                                                            className: "relative w-8 h-8 transform hover:scale-110 transition-transform duration-300",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                                src: `/icons/${social}.svg`,
-                                                                alt: social,
-                                                                fill: true,
-                                                                className: "object-contain opacity-70 hover:opacity-100"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/contact/page.tsx",
-                                                                lineNumber: 84,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, social, false, {
-                                                            fileName: "[project]/src/app/contact/page.tsx",
-                                                            lineNumber: 79,
-                                                            columnNumber: 21
-                                                        }, this))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 77,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 75,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/contact/page.tsx",
-                                    lineNumber: 43,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/contact/page.tsx",
-                            lineNumber: 39,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-lg    hover:shadow-2xl hover:bg-white/20 hover:scale-105   transition-all duration-300 border border-white/10",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-2xl font-semibold mb-6 text-white hover:text-pink-300",
-                                    children: "Send us a Message"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/contact/page.tsx",
-                                    lineNumber: 96,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                    onSubmit: handleSubmit,
-                                    className: "space-y-6",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    htmlFor: "name",
-                                                    className: "block text-sm font-medium text-gray-200",
+                    className: "bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl    p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10    hover:border-rose-500/20 transition-all duration-500",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                        onSubmit: handleSubmit,
+                        className: "space-y-8",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-1 md:grid-cols-2 gap-8",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                htmlFor: "name",
+                                                className: "text-sm font-medium text-rose-100/90    flex items-center space-x-2",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 99,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                    type: "text",
-                                                    name: "name",
-                                                    id: "name",
-                                                    value: formData.name,
-                                                    onChange: handleChange,
-                                                    className: "mt-1 block w-full px-4 py-3 rounded-lg    bg-white/5 border border-white/10    text-white placeholder-gray-400   focus:ring-2 focus:ring-pink-500 focus:border-transparent   transition duration-200 ease-in-out backdrop-blur-sm",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 100,
-                                                    columnNumber: 17
+                                                    lineNumber: 50,
+                                                    columnNumber: 19
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 98,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    htmlFor: "email",
-                                                    className: "block text-sm font-medium text-gray-200",
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contact/page.tsx",
+                                                lineNumber: 48,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "text",
+                                                name: "name",
+                                                id: "name",
+                                                value: formData.name,
+                                                onChange: handleChange,
+                                                className: "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10    text-white placeholder-gray-400 focus:border-rose-500/50    focus:ring-2 focus:ring-rose-500/20 transition-all duration-300   hover:bg-white/10",
+                                                required: true,
+                                                placeholder: "Your name"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contact/page.tsx",
+                                                lineNumber: 52,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 47,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                htmlFor: "email",
+                                                className: "text-sm font-medium text-rose-100/90    flex items-center space-x-2",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 115,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                    type: "email",
-                                                    name: "email",
-                                                    id: "email",
-                                                    value: formData.email,
-                                                    onChange: handleChange,
-                                                    className: "mt-1 block w-full px-4 py-3 rounded-lg    bg-white/5 border border-white/10    text-white placeholder-gray-400   focus:ring-2 focus:ring-pink-500 focus:border-transparent   transition duration-200 ease-in-out backdrop-blur-sm",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 116,
-                                                    columnNumber: 17
+                                                    lineNumber: 71,
+                                                    columnNumber: 19
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 114,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    htmlFor: "subject",
-                                                    className: "block text-sm font-medium text-gray-200",
-                                                    children: "Subject"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 131,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                    type: "text",
-                                                    name: "subject",
-                                                    id: "subject",
-                                                    value: formData.subject,
-                                                    onChange: handleChange,
-                                                    className: "mt-1 block w-full px-4 py-3 rounded-lg    bg-white/5 border border-white/10    text-white placeholder-gray-400   focus:ring-2 focus:ring-pink-500 focus:border-transparent   transition duration-200 ease-in-out backdrop-blur-sm",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 130,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    htmlFor: "message",
-                                                    className: "block text-sm font-medium text-gray-200",
-                                                    children: "Message"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 147,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                                    name: "message",
-                                                    id: "message",
-                                                    value: formData.message,
-                                                    onChange: handleChange,
-                                                    rows: 4,
-                                                    className: "mt-1 block w-full px-4 py-3 rounded-lg    bg-white/5 border border-white/10    text-white placeholder-gray-400   focus:ring-2 focus:ring-pink-500 focus:border-transparent   transition duration-200 ease-in-out backdrop-blur-sm",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 148,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 146,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "submit",
-                                                className: "w-full flex justify-center py-3 px-4    rounded-lg text-sm font-medium text-white   bg-gradient-to-r from-pink-500 to-purple-600   hover:from-pink-600 hover:to-purple-700   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500   transform hover:scale-105 transition-all duration-300",
-                                                children: "Send Message"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/contact/page.tsx",
-                                                lineNumber: 163,
+                                                lineNumber: 69,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "email",
+                                                name: "email",
+                                                id: "email",
+                                                value: formData.email,
+                                                onChange: handleChange,
+                                                className: "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10    text-white placeholder-gray-400 focus:border-rose-500/50    focus:ring-2 focus:ring-rose-500/20 transition-all duration-300   hover:bg-white/10",
+                                                required: true,
+                                                placeholder: "your.email@example.com"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contact/page.tsx",
+                                                lineNumber: 73,
                                                 columnNumber: 17
                                             }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 162,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/contact/page.tsx",
-                                    lineNumber: 97,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/contact/page.tsx",
-                            lineNumber: 93,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 68,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/contact/page.tsx",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        htmlFor: "subject",
+                                        className: "text-sm font-medium text-rose-100/90",
+                                        children: "Subject"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 91,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        type: "text",
+                                        name: "subject",
+                                        id: "subject",
+                                        value: formData.subject,
+                                        onChange: handleChange,
+                                        className: "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10    text-white placeholder-gray-400 focus:border-rose-500/50    focus:ring-2 focus:ring-rose-500/20 transition-all duration-300   hover:bg-white/10",
+                                        required: true,
+                                        placeholder: "How can we help you?"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 94,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/contact/page.tsx",
+                                lineNumber: 90,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        htmlFor: "message",
+                                        className: "text-sm font-medium text-rose-100/90",
+                                        children: "Message"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 111,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                        name: "message",
+                                        id: "message",
+                                        value: formData.message,
+                                        onChange: handleChange,
+                                        rows: 5,
+                                        className: "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10    text-white placeholder-gray-400 focus:border-rose-500/50    focus:ring-2 focus:ring-rose-500/20 transition-all duration-300   hover:bg-white/10 resize-none",
+                                        required: true,
+                                        placeholder: "Type your message here..."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/contact/page.tsx",
+                                        lineNumber: 114,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/contact/page.tsx",
+                                lineNumber: 110,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "submit",
+                                className: "w-full py-4 px-6 rounded-xl text-white font-medium   bg-gradient-to-r from-rose-500 to-pink-600    hover:from-rose-600 hover:to-pink-700   transform hover:scale-[1.02] active:scale-[0.98]   transition-all duration-300 shadow-lg hover:shadow-rose-500/25   focus:outline-none focus:ring-2 focus:ring-rose-500/50    focus:ring-offset-2 focus:ring-offset-black",
+                                children: "Send Message"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/contact/page.tsx",
+                                lineNumber: 130,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/contact/page.tsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/src/app/contact/page.tsx",
-                    lineNumber: 37,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/contact/page.tsx",
-            lineNumber: 31,
+            lineNumber: 26,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/contact/page.tsx",
-        lineNumber: 30,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 };

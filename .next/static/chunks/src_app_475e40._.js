@@ -10,18 +10,21 @@ __turbopack_esm__({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_refresh__.signature();
 "use client";
 ;
+;
 const Carousel = ()=>{
     _s();
     const images = [
-        '/img1.jpg',
-        '/img2.jpg',
-        '/img3.jpg',
-        '/img4.jpg',
-        '/img5.jpg'
+        '/banner1.jpg',
+        '/banner2.jpg',
+        '/banner3.jpg',
+        '/banner4.jpg',
+        '/banner5.jpg',
+        '/banner6.jpg'
     ];
     const [currentIndex, setCurrentIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const nextSlide = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
@@ -51,97 +54,144 @@ const Carousel = ()=>{
         setCurrentIndex((prevIndex)=>(prevIndex - 1 + images.length) % images.length);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative w-full h-64 md:h-96 mb-16",
+        className: "relative w-full aspect-[16/9] mb-10",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-full h-full overflow-hidden rounded-lg shadow-lg",
+                className: "absolute inset-0 overflow-hidden",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative w-full h-full flex transition-transform duration-1000 ease-in-out",
                     style: {
                         transform: `translateX(-${currentIndex * 100}%)`
                     },
                     children: images.map((image, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full h-full flex-shrink-0 bg-cover bg-center",
-                            style: {
-                                backgroundImage: `url(${image})`
-                            }
-                        }, index, false, {
+                            className: "relative w-full h-full flex-shrink-0",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: image,
+                                    alt: `Banner ${index + 1}`,
+                                    fill: true,
+                                    priority: index === 0,
+                                    className: "object-cover w-full h-full",
+                                    sizes: "(max-width: 768px) 100vw,   (max-width: 1200px) 100vw,   100vw",
+                                    quality: 90
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/components/Carousel/page.tsx",
+                                    lineNumber: 47,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/components/Carousel/page.tsx",
+                                    lineNumber: 59,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, index, true, {
                             fileName: "[project]/src/app/components/Carousel/page.tsx",
-                            lineNumber: 41,
+                            lineNumber: 43,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Carousel/page.tsx",
-                    lineNumber: 34,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Carousel/page.tsx",
-                lineNumber: 33,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-white",
-                onClick: prevSlide,
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    className: "h-6 w-6",
-                    fill: "none",
-                    viewBox: "0 0 24 24",
-                    stroke: "currentColor",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round",
-                        strokeWidth: "2",
-                        d: "M15 19l-7-7 7-7"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 flex items-center justify-between p-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "p-2 rounded-full bg-black/50 text-white hover:bg-black/70    transition-all duration-300 hover:scale-110 focus:outline-none    focus:ring-2 focus:ring-white/50",
+                        onClick: prevSlide,
+                        "aria-label": "Previous slide",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            className: "h-6 w-6",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeWidth: "2",
+                                d: "M15 19l-7-7 7-7"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/Carousel/page.tsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/components/Carousel/page.tsx",
+                            lineNumber: 74,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Carousel/page.tsx",
-                        lineNumber: 55,
-                        columnNumber: 11
+                        lineNumber: 67,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "p-2 rounded-full bg-black/50 text-white hover:bg-black/70    transition-all duration-300 hover:scale-110 focus:outline-none    focus:ring-2 focus:ring-white/50",
+                        onClick: nextSlide,
+                        "aria-label": "Next slide",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            className: "h-6 w-6",
+                            fill: "none",
+                            viewBox: "0 24 24",
+                            stroke: "currentColor",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeWidth: "2",
+                                d: "M9 5l7 7-7 7"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/Carousel/page.tsx",
+                                lineNumber: 86,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/components/Carousel/page.tsx",
+                            lineNumber: 85,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/components/Carousel/page.tsx",
+                        lineNumber: 78,
+                        columnNumber: 9
                     }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/app/components/Carousel/page.tsx",
-                    lineNumber: 54,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/app/components/Carousel/page.tsx",
-                lineNumber: 50,
+                lineNumber: 66,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-white",
-                onClick: nextSlide,
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    className: "h-6 w-6",
-                    fill: "none",
-                    viewBox: "0 0 24 24",
-                    stroke: "currentColor",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round",
-                        strokeWidth: "2",
-                        d: "M9 5l7 7-7 7"
-                    }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-4 left-0 right-0 flex justify-center gap-2",
+                children: images.map((_, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: `w-2 h-2 rounded-full transition-all duration-300 
+              ${currentIndex === index ? 'bg-white w-4' : 'bg-white/50'}`,
+                        onClick: ()=>setCurrentIndex(index),
+                        "aria-label": `Go to slide ${index + 1}`
+                    }, index, false, {
                         fileName: "[project]/src/app/components/Carousel/page.tsx",
-                        lineNumber: 63,
+                        lineNumber: 94,
                         columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/app/components/Carousel/page.tsx",
-                    lineNumber: 62,
-                    columnNumber: 9
-                }, this)
+                    }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Carousel/page.tsx",
-                lineNumber: 58,
+                lineNumber: 92,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Carousel/page.tsx",
-        lineNumber: 32,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 };

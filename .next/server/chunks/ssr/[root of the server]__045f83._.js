@@ -81,54 +81,69 @@ const navigationItems = [
     'Community',
     'Blog & Media',
     'Shop',
-    'Contact',
-    'Join Us'
+    'Contact'
 ];
 const Logo = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         href: "/",
-        className: "text-3xl font-bold text-white hover:text-gray-300 transition-all duration-300 transform hover:scale-105",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-            className: "bg-gradient-to-r from-gray-300 to-white text-transparent bg-clip-text",
-            children: "Shakti Sabha"
-        }, void 0, false, {
-            fileName: "[project]/src/app/components/Navbar/page.tsx",
-            lineNumber: 16,
-            columnNumber: 5
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/src/app/components/Navbar/page.tsx",
-        lineNumber: 15,
-        columnNumber: 3
-    }, this);
-const NavLink = ({ item })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-        href: `/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`,
-        className: "relative px-4 py-2 text-gray-300 font-medium text-sm hover:text-white transition-all duration-300 group",
+        className: "group flex items-center space-x-3",
         children: [
-            item,
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-12 h-12 bg-white/10 rounded-full flex items-center justify-center    group-hover:bg-white/20 transition-all duration-300",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-2xl",
+                    children: "⚔️"
+                }, void 0, false, {
+                    fileName: "[project]/src/app/components/Navbar/page.tsx",
+                    lineNumber: 17,
+                    columnNumber: 7
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Navbar/page.tsx",
-                lineNumber: 28,
+                lineNumber: 15,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "text-2xl font-bold bg-gradient-to-r from-gray-200 to-white    text-transparent bg-clip-text group-hover:from-white group-hover:to-gray-300    transition-all duration-300",
+                children: "Shakti Sabha"
+            }, void 0, false, {
+                fileName: "[project]/src/app/components/Navbar/page.tsx",
+                lineNumber: 19,
                 columnNumber: 5
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Navbar/page.tsx",
-        lineNumber: 23,
+        lineNumber: 14,
         columnNumber: 3
     }, this);
-// Create a separate client component for mobile menu
+const NavLink = ({ item })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+        href: `/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`,
+        className: "relative px-4 py-2 text-gray-100 font-medium text-sm hover:text-gray-300    transition-all duration-300 group",
+        children: [
+            item,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "absolute bottom-0 left-0 w-full h-0.5 bg-white/70 transform    scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+            }, void 0, false, {
+                fileName: "[project]/src/app/components/Navbar/page.tsx",
+                lineNumber: 34,
+                columnNumber: 5
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/app/components/Navbar/page.tsx",
+        lineNumber: 28,
+        columnNumber: 3
+    }, this);
 const MobileMenu = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "md:hidden",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("details", {
-            className: "group",
+            className: "group relative",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("summary", {
-                    className: "list-none text-gray-300 p-2 rounded-lg hover:bg-white/5 transition-colors duration-300",
+                    className: "list-none p-2 rounded-lg hover:bg-white/10    transition-all duration-300 cursor-pointer",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                        className: "w-6 h-6",
+                        className: "w-6 h-6 text-gray-300 hover:text-white transition-colors duration-300",
                         fill: "none",
                         stroke: "currentColor",
                         viewBox: "0 0 24 24",
@@ -139,93 +154,111 @@ const MobileMenu = ()=>{
                             d: "M4 6h16M4 12h16M4 18h16"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Navbar/page.tsx",
-                            lineNumber: 44,
+                            lineNumber: 51,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Navbar/page.tsx",
-                        lineNumber: 38,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Navbar/page.tsx",
-                    lineNumber: 37,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "absolute left-0 right-0 mt-2 px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md",
-                    children: navigationItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                            href: `/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`,
-                            className: "block px-3 py-2 rounded-md text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300",
-                            children: item
-                        }, item, false, {
-                            fileName: "[project]/src/app/components/Navbar/page.tsx",
-                            lineNumber: 54,
-                            columnNumber: 13
-                        }, this))
+                    className: "absolute right-0 w-56 mt-2 origin-top-right",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-gray-900/95 backdrop-blur-md rounded-lg shadow-lg    border border-white/10 overflow-hidden",
+                        children: navigationItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                href: `/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`,
+                                className: "block px-4 py-3 text-sm text-gray-300 hover:bg-white/10    hover:text-white transition-all duration-300 first:rounded-t-lg    last:rounded-b-lg border-b border-white/5 last:border-0",
+                                children: item
+                            }, item, false, {
+                                fileName: "[project]/src/app/components/Navbar/page.tsx",
+                                lineNumber: 63,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/components/Navbar/page.tsx",
+                        lineNumber: 60,
+                        columnNumber: 11
+                    }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Navbar/page.tsx",
-                    lineNumber: 52,
+                    lineNumber: 59,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/components/Navbar/page.tsx",
-            lineNumber: 36,
+            lineNumber: 42,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/Navbar/page.tsx",
-        lineNumber: 35,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 };
 const Navbar = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "fixed w-full z-50 bg-gray-900/80 backdrop-blur-md",
+        className: "fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-white/10",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between items-center h-20",
+                className: "flex justify-between items-center h-16",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Logo, {}, void 0, false, {
                         fileName: "[project]/src/app/components/Navbar/page.tsx",
-                        lineNumber: 73,
+                        lineNumber: 85,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "hidden md:flex space-x-4",
-                        children: navigationItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(NavLink, {
-                                item: item
-                            }, item, false, {
+                        className: "hidden md:flex items-center space-x-1",
+                        children: [
+                            navigationItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(NavLink, {
+                                    item: item
+                                }, item, false, {
+                                    fileName: "[project]/src/app/components/Navbar/page.tsx",
+                                    lineNumber: 90,
+                                    columnNumber: 15
+                                }, this)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/join-us",
+                                className: "ml-4 px-4 py-2 bg-white/10 text-white rounded-lg font-medium    hover:bg-white/20 transition-all duration-300",
+                                children: "Join Now"
+                            }, void 0, false, {
                                 fileName: "[project]/src/app/components/Navbar/page.tsx",
-                                lineNumber: 78,
-                                columnNumber: 15
-                            }, this))
-                    }, void 0, false, {
+                                lineNumber: 92,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/app/components/Navbar/page.tsx",
-                        lineNumber: 76,
+                        lineNumber: 88,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileMenu, {}, void 0, false, {
                         fileName: "[project]/src/app/components/Navbar/page.tsx",
-                        lineNumber: 83,
+                        lineNumber: 102,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Navbar/page.tsx",
-                lineNumber: 72,
+                lineNumber: 84,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/Navbar/page.tsx",
-            lineNumber: 71,
+            lineNumber: 83,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/Navbar/page.tsx",
-        lineNumber: 70,
+        lineNumber: 82,
         columnNumber: 5
     }, this);
 };
@@ -510,7 +543,7 @@ function RootLayout({ children }) {
         lang: "en",
         suppressHydrationWarning: true,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
-            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_e531dabc$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_mono_68a01160$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} antialiased relative bg-slate-600`,
+            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_e531dabc$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_mono_68a01160$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} antialiased relative bg-black`,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Navbar$2f$page$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",

@@ -12,8 +12,8 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 ;
 const metadata = {
-    title: 'About Us',
-    description: 'Learn more about Shakti Sabha and our mission to empower women'
+    title: 'About Us - Shakti Sabha',
+    description: 'Breaking barriers, building warriors - Learn about our mission to empower women'
 };
 const about = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -22,10 +22,10 @@ const about = ()=>{
             className: "relative z-10 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-20 ",
+                    className: "text-center mb-20",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-5xl font-bold text-white mb-6 mt-10",
+                            className: "text-5xl md:text-6xl font-bold text-white mb-6 mt-10 hover:scale-105 transition-transform duration-300",
                             children: "About Us"
                         }, void 0, false, {
                             fileName: "[project]/src/app/about-us/page.tsx",
@@ -34,10 +34,10 @@ const about = ()=>{
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed",
-                            children: "Shakti Sabha is dedicated to empowering women through education, counseling, and community support."
+                            children: "We are more than an organization - we are a movement of women supporting women, turning challenges into opportunities and fears into strength."
                         }, void 0, false, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 15,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, this)
                     ]
@@ -50,84 +50,129 @@ const about = ()=>{
                     className: "grid grid-cols-1 md:grid-cols-3 gap-8 mb-20",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1",
+                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20    hover:bg-white/20 transition-all hover:scale-105 hover:rotate-1 group",
                             children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto    group-hover:bg-white/20 transition-all",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-3xl",
+                                        children: "⚔️"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/about-us/page.tsx",
+                                        lineNumber: 29,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/about-us/page.tsx",
+                                    lineNumber: 27,
+                                    columnNumber: 13
+                                }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-2xl font-semibold text-white mb-4",
+                                    className: "text-2xl font-semibold text-white mb-4 text-center",
                                     children: "Our Mission"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 22,
+                                    lineNumber: 31,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-200 leading-relaxed",
-                                    children: "To create a supportive environment where women can thrive, learn, and achieve their full potential."
+                                    className: "text-gray-200 leading-relaxed text-center",
+                                    children: "Breaking Barriers, Building Warriors. We transform women through education, self-defense training, and psychological empowerment."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 23,
+                                    lineNumber: 32,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 21,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1",
+                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20    hover:bg-white/20 transition-all hover:scale-105 hover:-rotate-1 group",
                             children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto    group-hover:bg-white/20 transition-all",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-3xl",
+                                        children: "🌟"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/about-us/page.tsx",
+                                        lineNumber: 43,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/about-us/page.tsx",
+                                    lineNumber: 41,
+                                    columnNumber: 13
+                                }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-2xl font-semibold text-white mb-4",
+                                    className: "text-2xl font-semibold text-white mb-4 text-center",
                                     children: "Our Vision"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 29,
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-200 leading-relaxed",
-                                    children: "A world where every woman has equal opportunities and the confidence to pursue her dreams."
+                                    className: "text-gray-200 leading-relaxed text-center",
+                                    children: "A World Where Women Fear Nothing. Where every woman walks with confidence, speaks with power, and lives without boundaries."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 28,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-all hover:rotate-1",
+                            className: "bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20    hover:bg-white/20 transition-all hover:scale-105 hover:rotate-1 group",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-2xl font-semibold text-white mb-4",
-                                    children: "Our Values"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto    group-hover:bg-white/20 transition-all",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-3xl",
+                                        children: "💪"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/about-us/page.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 15
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 55,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-2xl font-semibold text-white mb-4 text-center",
+                                    children: "Our Impact"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/about-us/page.tsx",
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-200 leading-relaxed",
-                                    children: "Empowerment, Education, Support, Community, and Inclusivity guide everything we do."
+                                    className: "text-gray-200 leading-relaxed text-center",
+                                    children: "Real Women, Real Power. Our community of warriors grows stronger every day, supporting and inspiring each other to reach new heights."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 35,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/about-us/page.tsx",
-                    lineNumber: 20,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -138,7 +183,7 @@ const about = ()=>{
                             children: "What We Offer"
                         }, void 0, false, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 44,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -174,12 +219,12 @@ const about = ()=>{
                                                 children: item.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/about-us/page.tsx",
-                                                lineNumber: 54,
+                                                lineNumber: 78,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 77,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -189,7 +234,7 @@ const about = ()=>{
                                                     children: item.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                                    lineNumber: 57,
+                                                    lineNumber: 81,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -197,30 +242,30 @@ const about = ()=>{
                                                     children: item.desc
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                                    lineNumber: 58,
+                                                    lineNumber: 82,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 80,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 76,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 45,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/about-us/page.tsx",
-                    lineNumber: 43,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -231,7 +276,7 @@ const about = ()=>{
                             children: "Psychological and Emotional Empowerment"
                         }, void 0, false, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 66,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -245,7 +290,7 @@ const about = ()=>{
                                             children: "Building Inner Strength"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 93,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -253,13 +298,13 @@ const about = ()=>{
                                             children: "We focus on developing emotional resilience, self-confidence, and a positive self-image through specialized workshops and one-on-one counseling sessions."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 70,
+                                            lineNumber: 94,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,7 +315,7 @@ const about = ()=>{
                                             children: "Mental Wellness"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 99,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -278,25 +323,25 @@ const about = ()=>{
                                             children: "Our expert counselors provide support for stress management, anxiety, depression, and other mental health concerns in a safe, confidential environment."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/about-us/page.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 100,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/about-us/page.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/about-us/page.tsx",
-                            lineNumber: 67,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/about-us/page.tsx",
-                    lineNumber: 65,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this)
             ]

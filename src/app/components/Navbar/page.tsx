@@ -112,6 +112,24 @@ const Navbar = () => {
 
           <MobileMenu />
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-md rounded-lg mt-2">
+              {['Home', 'About', 'History', 'Contact', 'Blog'].map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item === 'Home' ? '' : item.toLowerCase().replace(' ', '')}`}
+                  className="block px-3 py-2 rounded-md text-white hover:bg-purple-500/20 transition-all duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

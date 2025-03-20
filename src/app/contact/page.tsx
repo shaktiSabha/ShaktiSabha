@@ -32,7 +32,7 @@ const ContactPage = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-rose-100/80 max-w-2xl mx-auto">
-            Have questions or need support? We're here to help you 24/7
+            Have questions or need support? We&apos;re here to help you 24/7
           </p>
         </div>
 

@@ -72,17 +72,6 @@ const MobileMenu = () => {
                 {item}
               </Link>
             ))}
-            
-            <Link
-              href="/join-us"
-              className="block px-4 py-3 text-sm text-white
-                bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 
-                hover:bg-gradient-to-br shadow-lg shadow-purple-500/50 
-                hover:shadow-purple-800/80 font-medium transition-all duration-300
-                hover:pl-6 transform hover:scale-[1.02]"
-            >
-              Join Us
-            </Link>
           </div>
         </div>
       </details>
@@ -96,40 +85,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Logo />
-
           <div className="hidden md:flex items-center space-x-4">
             {navigationItems.map(item => (
               <NavLink key={item} item={item} />
             ))}
-            
-            <Link
-              href="/join-us"
-              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-            >
-              Join Us
-            </Link>
           </div>
-
           <MobileMenu />
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-md rounded-lg mt-2">
-              {['Home', 'About', 'History', 'Contact', 'Blog'].map((item) => (
-                <Link
-                  key={item}
-                  href={`/${item === 'Home' ? '' : item.toLowerCase().replace(' ', '')}`}
-                  className="block px-3 py-2 rounded-md text-white hover:bg-purple-500/20 transition-all duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

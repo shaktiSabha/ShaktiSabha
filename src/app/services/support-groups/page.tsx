@@ -38,9 +38,18 @@ export default function SupportGroupsPage() {
           <h1 className="text-4xl font-bold text-amber-400 mb-4 mt-10">
             Support Groups
           </h1>
-          <p className="text-xl text-amber-300">
+          <p className="text-xl text-amber-300 mb-8">
             Find a community that understands and supports you.
           </p>
+          <div className="relative inline-block">
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 animate-pulse"></div>
+            <Link
+              href="/join-us"
+              className="relative inline-block bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:animate-none border-2 border-amber-300/20"
+            >
+              ✨ Join Us Today ✨
+            </Link>
+          </div>
         </div>
 
         {/* Support Groups Grid */}

@@ -21,7 +21,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [nextSlide]);

@@ -37,6 +37,17 @@ const NavLink = ({ item }: { item: string }) => (
   </Link>
 );
 
+const JoinUsButton = () => (
+  <Link
+    href="/join-us"
+    className="px-6 py-2 bg-red-500 text-white font-semibold rounded-full 
+      hover:bg-red-600 transform hover:scale-105 transition-all duration-300 
+      shadow-lg hover:shadow-red-500/30"
+  >
+    Join Us
+  </Link>
+);
+
 const MobileMenu = () => {
   return (
     <div className="md:hidden">
@@ -72,6 +83,9 @@ const MobileMenu = () => {
                 {item}
               </Link>
             ))}
+            <div className="p-4 border-t border-white/5 flex justify-center">
+              <JoinUsButton />
+            </div>
           </div>
         </div>
       </details>
@@ -85,10 +99,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Logo />
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             {navigationItems.map(item => (
               <NavLink key={item} item={item} />
             ))}
+            <JoinUsButton />
           </div>
           <MobileMenu />
         </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar/page";
 import Footer from "./components/Footer/page";
 import BackgroundVideo from "./components/BackgroundVideo/page";
+import { ThemeProvider } from './context/ThemeProvider';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
-        <BackgroundVideo />
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <BackgroundVideo />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

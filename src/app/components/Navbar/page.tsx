@@ -17,7 +17,7 @@ const Logo = () => (
       transition-all duration-300 shadow-lg hover:shadow-white/20">
       <span className="text-2xl transform group-hover:-rotate-3">⚔️</span>
     </div>
-    <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text 
+    <span className="text-2xl font-bold bg-red-400 bg-clip-text 
       text-transparent group-hover:from-white group-hover:to-white transform 
       group-hover:scale-105 transition-all duration-300">
       Shakti Sabha
@@ -28,11 +28,11 @@ const Logo = () => (
 const NavLink = ({ item }: { item: string }) => (
   <Link
     href={`/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`}
-    className="relative px-4 py-2 text-gray-300 font-medium text-sm 
-      hover:text-white transition-all duration-300 group overflow-hidden"
+    className="relative px-4 py-2 text-white font-medium text-sm 
+      hover:text-red-400 transition-all duration-300 group overflow-hidden"
   >
     {item}
-    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white/70 transform 
+    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-400 transform 
       translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
   </Link>
 );

@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Carousel from './components/Carousel/page'
 import Link from 'next/link';
@@ -59,42 +61,45 @@ const services = [
   }
 ];
 
-const page = () => {
+const Page = () => {
+
   return (
     <main className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6 animate-fade-in mt-10">
-           Welcome to Shakti Sabha 
+          <h1 className="text-5xl md:text-6xl font-bold text-red-500 mb-6 animate-fade-in mt-10">
+            Welcome to Shakti Sabha 
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-violet-300 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-red-400 mb-6">
             अब डरना नहीं, दहाड़ना है
           </h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Empowering women through resources, education, and community support.
           </p>
         </div>
+
         <div>
-            <Carousel/>
+          <Carousel/>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <Link 
               key={index}
               href={service.href}
               className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border 
-                border-white/20 shadow-xl hover:shadow-2xl transition-all 
-                duration-300 transform hover:-translate-y-2 group"
+                border-[var(--yellow-primary)]/20 shadow-xl hover:shadow-2xl 
+                transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              <div className="w-16 h-16 bg-violet-500/20 rounded-full 
+              <div className="w-16 h-16 bg-[var(--yellow-primary)]/20 rounded-full 
                 flex items-center justify-center mb-6 mx-auto 
-                group-hover:bg-violet-500/30 transition-colors duration-300">
+                group-hover:bg-[var(--yellow-primary)]/30 transition-colors duration-300">
                 <span className="text-3xl">{service.icon}</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4 text-center">
+              <h3 className="text-xl font-semibold text-red-300 mb-4 text-center">
                 {service.title}
               </h3>
-              <p className="text-gray-300 text-center">
+              <p className="text-white text-center">
                 {service.description}
               </p>
             </Link>
@@ -105,4 +110,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page;

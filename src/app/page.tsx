@@ -2,7 +2,14 @@
 
 import React from 'react'
 import Carousel from './components/Carousel/page'
-import Link from 'next/link';
+import Link from 'next/link'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+})
 
 const services = [
   {
@@ -70,7 +77,7 @@ const Page = () => {
           <h1 className="text-5xl md:text-6xl font-bold text-red-500 mb-6 animate-fade-in mt-10">
             Welcome to Shakti Sabha 
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-red-400 mb-6">
+          <h2 className={`${poppins.className} text-3xl md:text-4xl font-bold text-red-400 mb-6`}>
             अब डरना नहीं, दहाड़ना है
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">

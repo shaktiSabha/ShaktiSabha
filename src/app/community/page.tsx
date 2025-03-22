@@ -39,7 +39,6 @@ const CommunityGroups = [
 ];
 
 const CommunityPage = () => {
-  const [showJoinForm, setShowJoinForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',

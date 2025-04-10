@@ -4,7 +4,6 @@ const navigationItems = [
   'Home',
   'About Us',
   'Learn and Empower',
-  'Community',
   'Blogs',
   'Our Gallery',
   'Contact'

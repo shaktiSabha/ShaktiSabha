@@ -37,8 +37,7 @@ const GalleryPage = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
-            bg-white mb-6 mt-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-4 hover:scale-105 transition-transform duration-300 mt-1 text-center pb-10">
             Our Gallery
           </h1>
           <p className="text-xl text-rose-100/90 max-w-3xl mx-auto mb-12">

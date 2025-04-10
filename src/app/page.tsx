@@ -25,16 +25,16 @@ const services = [
     href: "/services/counseling"
   },
   {
-    icon: "👥",
-    title: "Community Platform",
-    description: "Connect and grow with like-minded women",
-    href: "/services/community-platform"
-  },
-  {
     icon: "🎯",
     title: "Webinars and Workshops",
     description: "Interactive learning experiences for personal growth",
     href: "/services/webinars-workshops"
+  },
+  {
+    icon: "👥",
+    title: "Community Platform",
+    description: "Connect and grow with like-minded women",
+    href: "/services/community-platform"
   },
   {
     icon: "🤝",
@@ -146,44 +146,17 @@ const Page = () => {
                 
                 {/* Added Related Media Section */}
                 <div className="mt-4 border-t border-[var(--yellow-primary)]/20 pt-4">
-                  <h4 className="text-lg font-semibold text-red-300 mb-3">Related Media</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <h4 className="text-lg font-semibold text-red-300 mb-3 text-center">For Related Media</h4>
+                    <div className="flex justify-center">
                     <a 
-                      href="/services/podcasts-media" 
+                      href="https://aaryaveera.netlify.app/" 
+                      target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-colors"
+                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors text-center text-sm"
                     >
-                      <span className="text-xl">🎧</span>
-                      <span className="text-white text-sm">Listen to our Podcast</span>
+                      Visit Aaryaveera Website
                     </a>
-                    <a 
-                      href="https://www.youtube.com/@aaryaveeraa" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-colors"
-                    >
-                      <span className="text-xl">📺</span>
-                      <span className="text-white text-sm">Watch Video Series</span>
-                    </a>
-                    <a 
-                      href="https://medium.com/shakti-sabha/articles" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-colors"
-                    >
-                      <span className="text-xl">📝</span>
-                      <span className="text-white text-sm">Read Articles</span>
-                    </a>
-                    <a 
-                      href="https://instagram.com/shaktisabha" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-colors"
-                    >
-                      <span className="text-xl">📱</span>
-                      <span className="text-white text-sm">Social Media Updates</span>
-                    </a>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>

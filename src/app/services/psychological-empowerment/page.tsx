@@ -8,7 +8,7 @@ const PsychologicalEmpowermentPage = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
+          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text p-5 
             bg-gradient-to-r from-rose-400 to-pink-600 mb-6">
             Psychological & Emotional Empowerment
           </h1>
@@ -51,24 +51,93 @@ const PsychologicalEmpowermentPage = () => {
           {/* Right Column: Key Features */}
           <div className="bg-gradient-to-br from-rose-500/10 to-pink-500/10 
             backdrop-blur-lg p-8 rounded-2xl border border-rose-500/20">
-            <h3 className="text-2xl font-semibold text-white mb-6">
+            <h3 className="text-2xl font-semibold text-white mb-6 text-center">
               Key Features of Our Program
             </h3>
+            <p className="text-lg text-gray-200 mb-6">
+              Empowering women through a holistic and deeply transformative approach.
+            </p>
             <div className="space-y-4">
-              {[
-                'Mental Resilience Building',
-                'Emotional Intelligence Development',
-                'Self-confidence Enhancement',
-                'Stress Management Techniques',
-                'Personal Growth Workshops'
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 
-                  p-4 bg-white/5 rounded-lg hover:bg-white/10 
-                  transition-all duration-300">
-                  <span className="text-rose-400">✦</span>
-                  <span className="text-gray-200">{feature}</span>
-                </div>
-              ))}
+              <div className="flex flex-col p-6 bg-white/5 rounded-lg 
+              hover:bg-white/10 transition-all duration-300 
+              hover:shadow-lg hover:shadow-rose-500/10 border border-rose-500/10
+              hover:border-rose-500/20 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="text-rose-400 text-xl animate-pulse">✦</span>
+                <span className="text-gray-200 font-semibold text-lg 
+                bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text 
+                text-transparent">Mental Resilience Building</span>
+              </div>
+              <p className='text-gray-300/80 text-sm pl-7 leading-relaxed 
+                hover:text-gray-200 transition-colors duration-300'>
+                We equip women with the psychological strength to navigate adversity 
+                with courage and clarity. Our structured modules include cognitive 
+                restructuring, resilience exercises, and trauma-informed tools that 
+                build a strong foundation of mental endurance and emotional stability.
+              </p>
+              </div>
+              <div className="flex flex-col p-6 bg-white/5 rounded-lg 
+              hover:bg-white/10 transition-all duration-300 
+              hover:shadow-lg hover:shadow-rose-500/10 border border-rose-500/10
+              hover:border-rose-500/20 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="text-rose-400 text-xl animate-pulse">✦</span>
+                <span className="text-gray-200 font-semibold text-lg 
+                bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text 
+                text-transparent">Emotional Intelligence Development</span>
+              </div>
+              <p className='text-gray-300/80 text-sm pl-7 leading-relaxed 
+                hover:text-gray-200 transition-colors duration-300'>
+                Understanding and managing emotions is key to self-mastery. Through guided sessions on self-awareness, empathy building, and emotional regulation, we enable participants to enhance interpersonal skills, resolve conflicts mindfully, and lead with emotional balance.
+              </p>
+              </div>
+              <div className="flex flex-col p-6 bg-white/5 rounded-lg 
+              hover:bg-white/10 transition-all duration-300 
+              hover:shadow-lg hover:shadow-rose-500/10 border border-rose-500/10
+              hover:border-rose-500/20 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="text-rose-400 text-xl animate-pulse">✦</span>
+                <span className="text-gray-200 font-semibold text-lg 
+                bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text 
+                text-transparent">Self-confidence Enhancement</span>
+              </div>
+              <p className='text-gray-300/80 text-sm pl-7 leading-relaxed 
+                hover:text-gray-200 transition-colors duration-300'>
+                Confidence is not a gift — it’s a skill we help you build. Our programs integrate body language training, communication strategies, self-image work, and mindset shifts that empower every woman to own her voice, assert her presence, and lead from within.
+              </p>
+              </div>
+              <div className="flex flex-col p-6 bg-white/5 rounded-lg 
+              hover:bg-white/10 transition-all duration-300 
+              hover:shadow-lg hover:shadow-rose-500/10 border border-rose-500/10
+              hover:border-rose-500/20 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="text-rose-400 text-xl animate-pulse">✦</span>
+                <span className="text-gray-200 font-semibold text-lg 
+                bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text 
+                text-transparent">Stress Management Techniques</span>
+              </div>
+              <p className='text-gray-300/80 text-sm pl-7 leading-relaxed 
+                hover:text-gray-200 transition-colors duration-300'>
+                In a world of constant noise, inner peace is a superpower. We introduce evidence-based and culturally-rooted stress relief practices — such as mindfulness, yogic breathwork, and guided journaling — designed to restore calm, focus, and emotional regulation.
+              </p>
+              </div>
+              <div className="flex flex-col p-6 bg-white/5 rounded-lg 
+              hover:bg-white/10 transition-all duration-300 
+              hover:shadow-lg hover:shadow-rose-500/10 border border-rose-500/10
+              hover:border-rose-500/20 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="text-rose-400 text-xl animate-pulse">✦</span>
+                <span className="text-gray-200 font-semibold text-lg 
+                bg-gradient-to-r from-rose-400 to-pink-500 bg-clip-text 
+                text-transparent">Personal Growth Workshops</span>
+              </div>
+              <p className='text-gray-300/80 text-sm pl-7 leading-relaxed 
+                hover:text-gray-200 transition-colors duration-300'>
+                We believe growth is not linear — it’s expansive. Our hands-on workshops are built to unlock personal potential, featuring themes like purpose discovery, leadership training, goal setting, and habit transformation. Each session is curated to help women rise beyond limits.<br/><br />
+Ready to unlock your inner power? Our programs are not just courses — they are experiences that create lasting transformation in mindset, lifestyle, and emotional wellbeing.
+
+              </p>
+              </div>
             </div>
           </div>
         </div>

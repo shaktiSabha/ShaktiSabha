@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface JoinForm {
   name: string;
@@ -14,44 +14,51 @@ interface JoinForm {
 
 const CommunityPlatformPage = () => {
   const [formData, setFormData] = useState<JoinForm>({
-    name: '',
-    email: '',
-    phone: '',
-    city: '',
-    preferred_platform: '',
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+    preferred_platform: "",
     interests: [],
-    experience_level: ''
+    experience_level: "",
   });
 
   const socialPlatforms = [
     {
-      name: 'WhatsApp',
-      icon: '📱',
-      description: 'Daily support and quick updates',
-      link: 'https://chat.whatsapp.com/your-group-link',
-      color: 'from-green-500 to-emerald-600'
+      name: "WhatsApp",
+      icon: "/icons/whatsapp.png",
+      description: "Daily support and quick updates",
+      link: "https://chat.whatsapp.com/your-group-link",
+      color: "from-green-500 to-emerald-600",
     },
     {
-      name: 'Telegram',
-      icon: '✈️',
-      description: 'News, resources, and community discussions',
-      link: 't.me/your-group-link',
-      color: 'from-blue-500 to-cyan-500'
+      name: "Telegram",
+      icon: "/icons/telegram.png",
+      description: "News, resources, and community discussions",
+      link: "t.me/your-group-link",
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      name: 'Discord',
-      icon: '💬',
-      description: 'Voice chats and topic-based channels',
-      link: 'discord.gg/your-invite-link',
-      color: 'from-indigo-500 to-purple-500'
+      name: "Facebook",
+      icon: "/icons/facebook.png",
+      description: "Voice chats and topic-based channels",
+      link: "discord.gg/your-invite-link",
+      color: "from-indigo-500 to-purple-500",
     },
     {
-      name: 'Instagram',
-      icon: '📸',
-      description: 'Visual updates and stories',
-      link: 'instagram.com/your-handle',
-      color: 'from-pink-500 to-rose-500'
-    }
+      name: "Instagram",
+      icon: "/icons/instagram.png",
+      description: "Visual updates and stories",
+      link: "instagram.com/your-handle",
+      color: "from-pink-500 to-rose-500",
+    },
+    {
+      name: "Twitter",
+      icon: "/icons/twitter.png",
+      description: "Visual updates and stories",
+      link: "instagram.com/your-handle",
+      color: "from-pink-500 to-rose-500",
+    },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,46 +72,57 @@ const CommunityPlatformPage = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-r from-yellow-400 to-orange-600 mb-6">
+          <h1
+            className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
+            bg-gradient-to-r from-yellow-400 to-orange-600 mb-6"
+          >
             Join Our Community
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Connect, learn, and grow with like-minded women across multiple platforms
+            Connect, learn, and grow with like-minded women across multiple
+            platforms
           </p>
         </div>
 
         {/* Social Platforms Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {socialPlatforms.map((platform) => (
-            <div key={platform.name} 
-              className="bg-white/10 backdrop-blur-lg p-6 rounded-xl 
+            <div
+              key={platform.name}
+              className=" text-center bg-white/10 backdrop-blur-lg p-6 rounded-xl 
                 border border-white/10 hover:border-white/20 
-                transition-all duration-300 group">
-              <div className="text-4xl mb-4">{platform.icon}</div>
+                transition-all duration-300 group"
+            >
+              <div className="mb-4">
+                <img
+                  src={platform.icon}
+                  alt={`${platform.name} icon`}
+                  className="w-10 h-10 mx-auto"
+                />
+              </div>
               <h3 className="text-xl font-semibold text-white mb-2">
                 {platform.name}
               </h3>
               <p className="text-gray-300 mb-4 text-sm">
                 {platform.description}
               </p>
-              <a
+                <a
                 href={platform.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-full py-2 px-4 rounded-lg text-center text-white 
-                  bg-gradient-to-r ${platform.color} opacity-80 
-                  hover:opacity-100 transition-all duration-300`}
-              >
+                className={`block w-full py-2 px-4 rounded-lg text-center text-white bg-gradient-to-r ${platform.color} opacity-80 hover:opacity-100 transition-all duration-300 b-5`}
+                >
                 Join {platform.name}
-              </a>
+                </a>
             </div>
           ))}
         </div>
 
         {/* Ground Work Join Form */}
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-xl 
-          border border-yellow-500/20 max-w-3xl mx-auto">
+        <div
+          className="bg-white/10 backdrop-blur-lg p-8 rounded-xl 
+          border border-yellow-500/20 max-w-3xl mx-auto"
+        >
           <h2 className="text-2xl font-semibold text-white mb-8 text-center">
             Join Our Ground Movement
           </h2>
@@ -116,7 +134,9 @@ const CommunityPlatformPage = () => {
                 className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg
                   text-white placeholder-gray-400 focus:border-yellow-500/50"
                 value={formData.name}
-                onChange={e => setFormData({...formData, name: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 required
               />
               <input
@@ -125,7 +145,9 @@ const CommunityPlatformPage = () => {
                 className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg
                   text-white placeholder-gray-400 focus:border-yellow-500/50"
                 value={formData.email}
-                onChange={e => setFormData({...formData, email: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 required
               />
             </div>
@@ -136,7 +158,9 @@ const CommunityPlatformPage = () => {
                 className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg
                   text-white placeholder-gray-400 focus:border-yellow-500/50"
                 value={formData.phone}
-                onChange={e => setFormData({...formData, phone: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 required
               />
               <input
@@ -145,7 +169,9 @@ const CommunityPlatformPage = () => {
                 className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg
                   text-white placeholder-gray-400 focus:border-yellow-500/50"
                 value={formData.city}
-                onChange={e => setFormData({...formData, city: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, city: e.target.value })
+                }
                 required
               />
             </div>
@@ -153,7 +179,9 @@ const CommunityPlatformPage = () => {
               className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg
                 text-white focus:border-yellow-500/50"
               value={formData.experience_level}
-              onChange={e => setFormData({...formData, experience_level: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, experience_level: e.target.value })
+              }
               required
             >
               <option value="">Select Experience Level</option>
@@ -163,15 +191,21 @@ const CommunityPlatformPage = () => {
             </select>
             <div className="space-y-2">
               <p className="text-white mb-2">Areas of Interest</p>
-              {['Self-Defense', 'Yoga', 'Meditation', 'Leadership', 'Wellness'].map((interest) => (
+              {[
+                "Self-Defense",
+                "Yoga",
+                "Meditation",
+                "Leadership",
+                "Wellness",
+              ].map((interest) => (
                 <label key={interest} className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     onChange={(e) => {
                       const newInterests = e.target.checked
                         ? [...formData.interests, interest]
-                        : formData.interests.filter(i => i !== interest);
-                      setFormData({...formData, interests: newInterests});
+                        : formData.interests.filter((i) => i !== interest);
+                      setFormData({ ...formData, interests: newInterests });
                     }}
                     className="form-checkbox h-4 w-4 text-yellow-500"
                   />

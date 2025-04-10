@@ -54,7 +54,7 @@ const CounselingPage = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
+            bg-gradient-to-r from-purple-400 to-pink-600 mb-6 p-4">
             Counseling Services
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

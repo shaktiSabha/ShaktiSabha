@@ -35,7 +35,7 @@ const JoinUsPage = () => {
     <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-300 mt-20">
+          <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-4 hover:scale-105 transition-transform duration-300 mt-20">
             Join Our Movement
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
@@ -65,7 +65,7 @@ const JoinUsPage = () => {
           {/* Get Involved Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white text-center mb-12">Get Involved</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
               {involvementOptions.map((option, index) => (
                 <div 
                   key={index}
@@ -80,7 +80,7 @@ const JoinUsPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
                   <p className="text-gray-300 mb-6">{option.description}</p>
-                  <button 
+                  {/* <button 
                     className={`px-6 py-3 rounded-lg font-bold transition-all duration-300
                       ${option.primary 
                         ? 'bg-white text-gray-900 hover:bg-gray-200' 
@@ -88,7 +88,7 @@ const JoinUsPage = () => {
                       } transform hover:scale-105`}
                   >
                     {option.action}
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>

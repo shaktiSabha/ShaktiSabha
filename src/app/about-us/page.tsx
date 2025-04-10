@@ -11,7 +11,7 @@ const about = () => {
     <div className="min-h-screen relative">      
       <main className="relative z-10 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-10 hover:scale-105 transition-transform duration-300">
+          <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-6 mt-1 hover:scale-105 transition-transform duration-300">
             About Us
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
@@ -86,19 +86,29 @@ const about = () => {
           </div>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md p-10 rounded-xl border border-white/20">
-          <h2 className="text-3xl font-semibold text-white mb-10 text-center">Psychological and Emotional Empowerment</h2>
+        <div className="bg-white/10 backdrop-blur-md p-10 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
+          <h2 className="text-3xl font-semibold text-white mb-10 text-center relative">
+            <span className="relative inline-block after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-white/40 after:bottom-[-10px] after:left-1/3">
+            Aryaveera – Founder, Shakti Sabha Organization
+            </span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-white">Building Inner Strength</h3>
-              <p className="text-gray-200 leading-relaxed">
-                We focus on developing emotional resilience, self-confidence, and a positive self-image through specialized workshops and one-on-one counseling sessions.
+            <div className="space-y-4 p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-white flex items-center gap-2">
+          <span className="text-2xl">🎯</span>
+          About Aryveera
+              </h3>
+              <p className="text-gray-200 leading-relaxed hover:text-white transition-colors duration-300">
+              Aryaveera is a bold visionary, a modern-day Rani Lakshmi Bai, and a fearless advocate for women&apos;s rights, safety, and inner awakening. With a rare combination of ancient wisdom and modern skills, she has empowered thousands of girls and women across India to recognize their true strength – their Shakti.
               </p>
             </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-white">Mental Wellness</h3>
-              <p className="text-gray-200 leading-relaxed">
-                Our expert counselors provide support for stress management, anxiety, depression, and other mental health concerns in a safe, confidential environment.
+            <div className="space-y-4 p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-white flex items-center gap-2">
+          <span className="text-2xl">💭</span>
+          Our Vission
+              </h3>
+              <p className="text-gray-200 leading-relaxed hover:text-white transition-colors duration-300">
+              &quot;My vision is not just to protect women — but to awaken the lioness within them. We are not here to beg for safety, we are here to reclaim our ancient strength with wisdom, fire, and fearlessness.&quot;
               </p>
             </div>
           </div>

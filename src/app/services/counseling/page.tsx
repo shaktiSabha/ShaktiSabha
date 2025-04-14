@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface AppointmentForm {
@@ -21,27 +22,6 @@ const CounselingPage = () => {
     concerns: ''
   });
 
-  const supportGroups = [
-    {
-      title: "Mental Wellness Circle",
-      schedule: "Mondays, 7 PM",
-      topics: ["Anxiety", "Depression", "Stress Management"],
-      facilitator: "Dr. Priya Sharma"
-    },
-    {
-      title: "Career & Life Balance",
-      schedule: "Wednesdays, 6 PM",
-      topics: ["Work Stress", "Time Management", "Goal Setting"],
-      facilitator: "Ms. Ritu Verma"
-    },
-    {
-      title: "Family Relations",
-      schedule: "Saturdays, 11 AM",
-      topics: ["Marriage", "Parenting", "In-laws Relations"],
-      facilitator: "Dr. Meera Reddy"
-    }
-  ];
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Add form submission logic here
@@ -49,7 +29,7 @@ const CounselingPage = () => {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="grid  py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -63,33 +43,58 @@ const CounselingPage = () => {
         </div>
 
         {/* Quick Chat Section */}
-        <div className="mb-16 bg-white/10 backdrop-blur-lg p-8 rounded-xl 
+        <div className="mb-16 bg-white/10 backdrop-blur-sm p-2 rounded-xl 
           border border-purple-500/20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-semibold text-white mb-6">
+            <div className="max-w-xl mx-auto text-center p-4">
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text 
+              bg-gradient-to-r from-green-300 to-blue-400 mb-4">
               Need Immediate Support?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <a href="https://wa.me/yourwhatsappnumber" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-3 px-6 py-4 
-                  bg-green-500/20 rounded-lg hover:bg-green-500/30 transition-all duration-300">
-                <span className="text-2xl">💬</span>
-                <span className="text-white">Chat on WhatsApp</span>
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-lg p-4 
+              bg-gradient-to-br from-green-500/10 to-green-500/30 
+              hover:from-green-500/20 hover:to-green-500/40 
+              border border-green-500/20 backdrop-blur-sm
+              transition-all duration-300 transform hover:scale-102">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 
+              to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+              <div className="relative flex flex-col items-center space-y-2">
+              <Image
+                  src="/icons/whatsapp.png" // or a remote URL
+                  alt="Description of image"
+                  width={40}
+                  height={40}
+                />
+              <span className="text-white font-medium text-base">Chat on WhatsApp</span>
+              </div>
               </a>
               <a href="mailto:counseling@shaktisabha.com" 
-                className="flex items-center justify-center space-x-3 px-6 py-4 
-                  bg-blue-500/20 rounded-lg hover:bg-blue-500/30 transition-all duration-300">
-                <span className="text-2xl">📧</span>
-                <span className="text-white">Send Email</span>
+              className="group relative overflow-hidden rounded-lg p-4 
+              bg-gradient-to-br from-blue-500/10 to-blue-500/30 
+              hover:from-blue-500/20 hover:to-blue-500/40 
+              border border-blue-500/20 backdrop-blur-sm
+              transition-all duration-300 transform hover:scale-102">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 
+              to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+              <div className="relative flex flex-col items-center space-y-2">
+              <Image
+                  src="/icons/telegram.png" // or a remote URL
+                  alt="Description of image"
+                  width={40}
+                  height={40}
+                />
+              <span className="text-white font-medium text-base">Chat on Telegram</span>
+              </div>
               </a>
             </div>
-          </div>
+            </div>
         </div>
 
         {/* Book Appointment Form */}
-        <div className="mb-16 bg-white/10 backdrop-blur-lg p-8 rounded-xl 
+        <div className="mb-5 bg-white/10 backdrop-blur-lg p-6 rounded-xl 
           border border-pink-500/20">
           <h2 className="text-2xl font-semibold text-white mb-8 text-center">
             Book a Counseling Session
@@ -169,36 +174,7 @@ const CounselingPage = () => {
           </form>
         </div>
 
-        {/* Support Groups Section */}
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-xl 
-          border border-purple-500/20">
-          <h2 className="text-2xl font-semibold text-white mb-8 text-center">
-            Sister Circle Support Groups
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {supportGroups.map((group, index) => (
-              <div key={index} className="bg-white/5 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {group.title}
-                </h3>
-                <p className="text-purple-300 mb-3">{group.schedule}</p>
-                <p className="text-gray-400 mb-3">Facilitator: {group.facilitator}</p>
-                <div className="space-y-2">
-                  {group.topics.map((topic, i) => (
-                    <div key={i} className="flex items-center space-x-2">
-                      <span className="text-pink-400">•</span>
-                      <span className="text-gray-300">{topic}</span>
-                    </div>
-                  ))}
-                </div>
-                <button className="mt-4 w-full py-2 bg-purple-500/20 text-white 
-                  rounded-lg hover:bg-purple-500/30 transition-all duration-300">
-                  Join Group
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </div>
   );

@@ -51,8 +51,8 @@ const martialArtsCourses: Course[] = [
   },
   {
     id: 'ma-103',
-    title: 'कुंडलिनी योग और मार्शल आर्ट्स',
-    description: 'Combine ancient kundalini practices with modern martial arts',
+    title: 'ध्यान योग और मार्शल आर्ट्स',
+    description: 'Combine ancient Dhyan Yoga practices with modern martial arts',
     duration: '10 weeks',
     price: 3999,
     instructor: 'Guru Meera Devi',
@@ -68,6 +68,23 @@ const martialArtsCourses: Course[] = [
   },
   {
     id: 'ma-104',
+    title: 'Kalaripayattu Training',
+    description: 'Learn the ancient Indian martial art form of Kalaripayattu',
+    duration: '8 weeks',
+    price: 3499,
+    instructor: 'Guru Arjun Menon',
+    level: 'All Levels',
+    thumbnail: '/courses/kalaripayattu.jpg',
+    features: [
+      'Traditional Kalaripayattu techniques',
+      'Weapon training basics',
+      'Flexibility and agility exercises',
+      'Meditative movements',
+      'Cultural and historical insights'
+    ]
+  },
+  {
+    id: 'ma-105',
     title: 'Urban Self-Defense Mastery',
     description: 'Real-world self-defense techniques for urban environments',
     duration: '6 weeks',
@@ -88,7 +105,7 @@ const martialArtsCourses: Course[] = [
 const upcomingCourses: Course[] = [
   {
     id: 'uc-101',
-    title: 'Mental Resilience & Self-Defense',
+    title: 'Mission Mardini: Mental Resilience Training',
     description: 'Combine psychological strength with physical techniques',
     duration: '10 weeks',
     price: 3499,
@@ -148,7 +165,7 @@ const OnlineCoursesPage = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text 
-            bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
+            bg-gradient-to-r from-red-400 to-pink-600 mb-6">
             Online Courses
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -158,13 +175,13 @@ const OnlineCoursesPage = () => {
 
         {/* Martial Arts Courses */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">
+          <h2 className="text-3xl text-center font-bold text-red-300 mb-8">
             Martial Arts Courses
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {martialArtsCourses.map((course) => (
               <div key={course.id} className="bg-white/10 backdrop-blur-lg rounded-xl 
-                overflow-hidden border border-purple-500/20 hover:border-purple-500/40 
+                overflow-hidden border border-red-500/20 hover:border-red-500/40 
                 transition-all duration-300 group">
                 <div className="relative h-48">
                   <Image
@@ -179,7 +196,7 @@ const OnlineCoursesPage = () => {
                     <h3 className="text-xl font-semibold text-white">
                       {course.title}
                     </h3>
-                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 
+                    <span className="px-3 py-1 bg-red-500/20 text-red-300 
                       rounded-full text-sm">
                       {course.level}
                     </span>
@@ -188,7 +205,7 @@ const OnlineCoursesPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between text-sm text-gray-400">
                       <span>Duration: {course.duration}</span>
-                      <span>Price: ₹{course.price}</span>
+                      {/* <span>Price: ₹{course.price}</span> */}
                     </div>
                     <ul className="space-y-2">
                       {course.features.map((feature, index) => (
@@ -198,11 +215,11 @@ const OnlineCoursesPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <button className="w-full py-3 px-4 bg-gradient-to-r from-purple-500 
-                      to-pink-600 text-white rounded-lg hover:from-purple-600 
+                    <button className="w-full py-3 px-4 bg-gradient-to-r from-red-500 
+                      to-pink-600 text-white rounded-lg hover:from-red-600 
                       hover:to-pink-700 transition-all duration-300 transform 
                       hover:scale-[1.02]">
-                      Enroll Now
+                      Comming Soon..!
                     </button>
                   </div>
                 </div>
@@ -213,7 +230,7 @@ const OnlineCoursesPage = () => {
 
         {/* Upcoming Courses */}
         <section>
-          <h2 className="text-3xl font-bold text-white mb-8">
+          <h2 className="text-3xl font-bold text-red-300 mb-8">
             Upcoming Courses
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -229,11 +246,10 @@ const OnlineCoursesPage = () => {
                   <div className="space-y-2 text-sm text-gray-400">
                     <p>Coming Soon</p>
                     <p>Expected Duration: {course.duration}</p>
-                    <p>Estimated Price: ₹{course.price}</p>
                   </div>
                   <button className="mt-4 w-full py-2 px-4 bg-pink-500/20 text-pink-300 
                     rounded-lg hover:bg-pink-500/30 transition-all duration-300">
-                    Join Waitlist
+                    Comming Soon..!
                   </button>
                 </div>
               </div>

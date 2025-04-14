@@ -38,9 +38,9 @@ const services = [
   },
   {
     icon: "🤝",
-    title: "Support Groups",
+    title: "Our Revolution",
     description: "Safe spaces for sharing and healing together",
-    href: "/services/support-groups"
+    href: "/services/our-revolution"
   },
   {
     icon: "📚",
@@ -55,10 +55,10 @@ const services = [
     href: "/services/healthy-lifestyle"
   },
   {
-    icon: "👩‍👩‍👧‍👦",
-    title: "For Specific Groups",
-    description: "Tailored support for young women, mothers, and professionals",
-    href: "/services/specific-groups"
+    icon: "💬",
+    title: "Testimonials",
+    description: "Real stories and experiences from our community members",
+    href: "/services/testimonials"
   },
   {
     icon: "🎧",

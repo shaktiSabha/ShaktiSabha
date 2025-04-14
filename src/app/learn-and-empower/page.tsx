@@ -30,7 +30,7 @@ const LearnandEmpower = () => {
               <span className="text-3xl">🥋</span>
             </div>
             <h2 className="text-2xl font-semibold text-white mb-4 hover:text-pink-300">
-              Self-Defense Courses
+              Self-Defense Guidens
             </h2>
             <p className="text-gray-200 mb-6">
               Learn practical self-defense techniques from certified instructors. Available in both free and premium formats.
@@ -80,7 +80,7 @@ const LearnandEmpower = () => {
         {/* Counseling Services Section */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Counseling Services & Support
+          Join Shakti Counseling/Events
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Chat Support Card */}
@@ -136,24 +136,23 @@ const LearnandEmpower = () => {
             {/* Support Group Categories */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
               {[
-                { title: 'Mental Wellness', schedule: 'Mondays, 7 PM', icon: '🌸' },
-                { title: 'Career Growth', schedule: 'Wednesdays, 6 PM', icon: '💼' },
-                { title: 'Personal Development', schedule: 'Fridays, 8 PM', icon: '✨' },
-                { title: 'Family Matters', schedule: 'Saturdays, 11 AM', icon: '👨‍👩‍👧‍👦' },
-                { title: 'Financial Independence', schedule: 'Tuesdays, 7 PM', icon: '💰' },
-                { title: 'Self-Defense Practice', schedule: 'Thursdays, 6 PM', icon: '🥋' },
+              { title: 'Domestic Violence Support', schedule: 'Mondays, 7 PM', icon: '🛡️' },
+              { title: 'Trauma Recovery & Healing', schedule: 'Wednesdays, 6 PM', icon: '🌿' },
+              { title: 'Career Guidance & Mentorship', schedule: 'Fridays, 8 PM', icon: '🎓' },
+              { title: 'Mental Wellness & Mindfulness', schedule: 'Saturdays, 11 AM', icon: '🧘' },
+              { title: 'Emotional Healing & Growth', schedule: 'Tuesdays, 7 PM', icon: '💖' },
               ].map((group, index) => (
-                <div key={index} 
-                  className="bg-white/10 p-6 rounded-lg hover:bg-white/20 
-                    transition-all duration-300 cursor-pointer">
-                  <span className="text-2xl mb-2 block">{group.icon}</span>
-                  <h3 className="text-lg font-semibold text-white mb-2">{group.title}</h3>
-                  <p className="text-gray-300 text-sm">{group.schedule}</p>
-                  <button className="mt-4 px-4 py-2 bg-yellow-500/20 text-white rounded-lg 
-                    hover:bg-yellow-500/40 transition-all duration-300 text-sm w-full">
-                    Join Group
-                  </button>
-                </div>
+              <div key={index} 
+                className="bg-white/10 p-6 rounded-lg hover:bg-white/20 
+                transition-all duration-300 cursor-pointer">
+                <span className="text-2xl mb-2 block">{group.icon}</span>
+                <h3 className="text-lg font-semibold text-white mb-2">{group.title}</h3>
+                <p className="text-gray-300 text-sm">{group.schedule}</p>
+                <button className="mt-4 px-4 py-2 bg-yellow-500/20 text-white rounded-lg 
+                hover:bg-yellow-500/40 transition-all duration-300 text-sm w-full">
+                Join Group
+                </button>
+              </div>
               ))}
             </div>
           </div>

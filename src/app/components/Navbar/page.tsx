@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
 const navigationItems = [
   'Home',
@@ -6,19 +8,19 @@ const navigationItems = [
   'Learn and Empower',
   'Blogs',
   'Our Gallery',
-  'Contact'
+  'Contact',
 ];
 
 const Logo = () => (
-  <Link href="/" className="group flex items-center space-x-3">
+  <Link href="/" className="flex items-center space-x-3">
     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center 
-      group-hover:bg-white/20 transform group-hover:scale-105 group-hover:rotate-3
+      hover:bg-white/20 transform hover:scale-105 hover:rotate-3
       transition-all duration-300 shadow-lg hover:shadow-white/20">
-      <span className="text-2xl transform group-hover:-rotate-3">⚔️</span>
+      <span className="text-2xl transform hover:-rotate-3">⚔️</span>
     </div>
     <span className="text-2xl font-bold bg-red-400 bg-clip-text 
-      text-transparent group-hover:from-white group-hover:to-white transform 
-      group-hover:scale-105 transition-all duration-300">
+      text-transparent hover:from-white hover:to-white transform 
+      hover:scale-105 transition-all duration-300">
       Shakti Sabha
     </span>
   </Link>
@@ -32,27 +34,27 @@ const NavLink = ({ item }: { item: string }) => (
   >
     {item}
     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-400 transform 
-      translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
+      -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
   </Link>
 );
 
 const JoinUsButton = () => (
-  <Link
-    href="/join-us"
-    className="px-6 py-2 bg-red-500 text-white font-semibold rounded-full 
+  <Button
+    asChild
+    className="bg-red-500 text-white font-semibold rounded-full 
       hover:bg-red-600 transform hover:scale-105 transition-all duration-300 
       shadow-lg hover:shadow-red-500/30"
   >
-    Join Us
-  </Link>
+    <Link href="/join-us">Join Us</Link>
+  </Button>
 );
 
-const MobileMenu = () => {
-  return (
-    <div className="md:hidden">
-      <details className="group relative">
-        <summary className="list-none p-2 rounded-lg hover:bg-white/10 
-          transition-all duration-300 cursor-pointer transform hover:scale-105">
+const MobileMenu = () => (
+  <div className="md:hidden">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="p-2 rounded-lg hover:bg-white/10 
+          transition-all duration-300 transform hover:scale-105">
           <svg
             className="w-6 h-6 text-gray-300 hover:text-white transition-colors duration-300"
             fill="none"
@@ -66,31 +68,29 @@ const MobileMenu = () => {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-        </summary>
-        <div className="absolute right-0 w-56 mt-2 origin-top-right">
-          <div className="bg-black/80 backdrop-blur-md rounded-lg shadow-lg 
-            border border-white/10 overflow-hidden transform transition-all duration-300
-            hover:border-white/20 hover:shadow-white/10">
-            {navigationItems.map(item => (
-              <Link
-                key={item}
-                href={`/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`}
-                className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 
-                  hover:text-white hover:pl-6 transition-all duration-300
-                  border-b border-white/5"
-              >
-                {item}
-              </Link>
-            ))}
-            <div className="p-4 border-t border-white/5 flex justify-center">
-              <JoinUsButton />
-            </div>
-          </div>
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="bg-black/80 backdrop-blur-md rounded-lg shadow-lg 
+        border border-white/10 overflow-hidden transform transition-all duration-300
+        hover:border-white/20 hover:shadow-white/10">
+        {navigationItems.map((item) => (
+          <DropdownMenuItem key={item} asChild>
+            <Link
+              href={`/${item === 'Home' ? '' : item.toLowerCase().replaceAll(' ', '-')}`}
+              className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 
+                hover:text-white transition-all duration-300"
+            >
+              {item}
+            </Link>
+          </DropdownMenuItem>
+        ))}
+        <div className="p-4 border-t border-white/5 flex justify-center">
+          <JoinUsButton />
         </div>
-      </details>
-    </div>
-  );
-};
+      </DropdownMenuContent>
+    </DropdownMenu>
+  </div>
+);
 
 const Navbar = () => {
   return (
@@ -99,7 +99,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Logo />
           <div className="hidden md:flex items-center space-x-6">
-            {navigationItems.map(item => (
+            {navigationItems.map((item) => (
               <NavLink key={item} item={item} />
             ))}
             <JoinUsButton />

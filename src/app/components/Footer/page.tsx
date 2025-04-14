@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Logo & Copyright Section */}
           <div className="text-center md:text-left space-y-4">
             <div className="space-y-3">
-              <h3 className="text-3xl font-bold text-white">
+              <h3 className="text-3xl font-bold text-red-400">
                 Shakti Sabha
               </h3>
               <p className="text-gray-300">

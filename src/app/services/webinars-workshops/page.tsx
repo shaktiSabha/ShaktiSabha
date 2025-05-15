@@ -1,5 +1,7 @@
 "use client"
 
+import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const WebinarsWorkshopsPage = () => {
@@ -10,12 +12,25 @@ const WebinarsWorkshopsPage = () => {
       title: "Shakti Bhava",
       type: "Physical Event",
       locations: [
-        { type: "Schools", schedule: "Every Monday" },
-        { type: "Colleges", schedule: "Every Wednesday" },
-        { type: "Villages", schedule: "Weekend Workshops" }
+        {
+          type: "Schools",
+          schedule: "Every Monday",
+          image: "/images/school-event.jpg", // Replace with actual image path
+        },
+        {
+          type: "Colleges",
+          schedule: "Every Wednesday",
+          image: "/images/college-event.jpg", // Replace with actual image path
+        },
+        {
+          type: "Villages",
+          schedule: "Weekend Workshops",
+          image: "/images/village-event.jpg", // Replace with actual image path
+        },
       ],
-      description: "Empowering sessions focused on self-defense, mental strength, and personal growth"
-    }
+      description:
+        "Empowering sessions focused on self-defense, mental strength, and personal growth",
+    },
   ];
 
   const shaktisutras = [
@@ -65,15 +80,24 @@ const WebinarsWorkshopsPage = () => {
                 <div key={index} className="bg-white/10 backdrop-blur-lg p-8 rounded-xl 
                   border border-red-500/20 hover:border-red-500/40 
                   transition-all duration-300">
-                  <h3 className="text-2xl font-semibold text-white mb-4">
+                  <Image
+                    src={location.image}
+                    alt={`${location.type} Event`}
+                    width={1000}
+                    height={500}
+                    className="w-full h-40 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-center text-2xl font-semibold text-white mb-4">
                     {location.type}
                   </h3>
-                  <p className="text-red-100/80 mb-4">{location.schedule}</p>
-                  <button className="px-6 py-2 bg-gradient-to-r from-red-500/50 to-red-600/50 
-                    text-white rounded-lg hover:from-red-500/70 hover:to-red-600/70 
-                    transition-all duration-300">
-                    Register Now
-                  </button>
+                  <p className="text-center text-red-100/80 mb-4">{location.schedule}</p>
+                  <div className="text-center pt-4" >
+                      <button className="px-6 py-2 bg-gradient-to-r from-red-500/50 to-red-600/50 
+                        text-white rounded-lg hover:from-red-500/70 hover:to-red-600/70 
+                        transition-all duration-300">
+                        View Event Details
+                      </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -109,11 +133,12 @@ const WebinarsWorkshopsPage = () => {
                     <li>📅 Every Sunday</li>
                     <li>💻 Platform: Google Meet</li>
                   </ul>
-                  <button className="mt-6 px-6 py-2 bg-gradient-to-r from-red-500/50 
+                  <Link href={"https://meet.google.com"} target='_blank' ><button className="mt-6 px-6 py-2 bg-gradient-to-r from-red-500/50 
                     to-red-600/50 text-white rounded-lg hover:from-red-500/70 
                     hover:to-red-600/70 transition-all duration-300 w-full">
                     Join Next Session
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

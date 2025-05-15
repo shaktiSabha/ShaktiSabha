@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface HealthArticle {
   id: string;
@@ -140,12 +141,14 @@ const HealthAndLifestylePage = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-6 w-full py-2 px-4 bg-gradient-to-r 
-                  from-green-500/50 to-emerald-600/50 text-white rounded-lg 
-                  hover:from-green-500/70 hover:to-emerald-600/70 
-                  transition-all duration-300">
-                  Read More
-                </button>
+                <Link href={`/health-article/${article.id}`} className="mt-6 block w-full">
+              <button className="w-full py-2 px-4 bg-gradient-to-r 
+                from-green-500/50 to-emerald-600/50 text-white rounded-lg 
+                hover:from-green-500/70 hover:to-emerald-600/70 
+                transition-all duration-300">
+                Read More
+              </button>
+            </Link>
               </div>
             </article>
           ))}

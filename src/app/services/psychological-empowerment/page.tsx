@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import React from 'react';
 
 const PsychologicalEmpowermentPage = () => {
@@ -144,12 +145,15 @@ Ready to unlock your inner power? Our programs are not just courses — they are
 
         {/* Call to Action */}
         <div className="text-center">
+          <Link href="/services/webinars-workshops" className="inline-block mb-6">
           <button className="px-8 py-4 bg-gradient-to-r from-rose-500 to-pink-600 
             text-white rounded-xl font-bold hover:from-rose-600 hover:to-pink-700 
             transform hover:scale-105 transition-all duration-300 shadow-lg 
             hover:shadow-rose-500/25">
             Join Our Next Workshop
           </button>
+          </Link>
+
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ const martialArtsCourses: Course[] = [
     price: 2999,
     instructor: 'Master Priya Singh',
     level: 'Beginner',
-    thumbnail: '/courses/self-defense.jpg',
+    thumbnail: '/Courses/selfdefence.jpeg',
     features: [
       'Basic striking techniques',
       'Escape maneuvers',
@@ -145,7 +145,7 @@ const upcomingCourses: Course[] = [
     price: 2999,
     instructor: 'Dr. Radhika Kumar',
     level: 'Beginner',
-    thumbnail: '/courses/digital-protection.jpg',
+    thumbnail: '/selfdefence.jpeg',
     features: [
       'Cyber security basics',
       'Social media safety',

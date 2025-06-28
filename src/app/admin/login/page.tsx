@@ -28,11 +28,11 @@ const AdminLogin = () => {
     try {
       // For demo purposes, using simple authentication
       // In production, you should implement proper authentication with your backend
-      if (formData.username === 'admin' && formData.password === 'admin123') {
+      if (formData.username === 'shaktisabha@123321' && formData.password === '321shakti') {
         localStorage.setItem('admin_token', 'demo_token_123');
         router.push('/admin');
       } else {
-        setError('Invalid credentials. Use admin/admin123 for demo.');
+        setError('Invalid credentials. Use please contact admin');
       }
     } catch {
       setError('Login failed. Please try again.');
@@ -167,18 +167,6 @@ const AdminLogin = () => {
               )}
             </button>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl">
-            <p className="text-amber-400 text-sm font-medium mb-2 flex items-center">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Demo Credentials
-            </p>
-            <div className="space-y-1 text-xs text-gray-300">
-              <p><span className="text-amber-400">Username:</span> admin</p>
-              <p><span className="text-amber-400">Password:</span> admin123</p>
-            </div>
-          </div>
         </div>
 
         {/* Footer */}

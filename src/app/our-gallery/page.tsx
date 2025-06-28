@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 const categories = ['All', 'Workshops', 'Community', 'Training', 'Events', 'Conferences', 'Other'] as const;
@@ -21,32 +21,57 @@ const GalleryPage = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('All');
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchGalleryImages();
-  }, []);
-
-  const fetchGalleryImages = async () => {
+  const fetchGalleryImages = useCallback(async (category: Category = activeCategory) => {
     try {
       setLoading(true);
-      const response = await fetch('/api/gallery'); // Only published items by default
+      setError(null);
+      
+      // Build API URL with category filter
+      const url = new URL('/api/gallery', window.location.origin);
+      if (category !== 'All') {
+        url.searchParams.set('category', category);
+      }
+      url.searchParams.set('status', 'published');
+      
+      console.log('Fetching gallery with URL:', url.toString());
+      console.log('Category:', category);
+      
+      const response = await fetch(url.toString());
+      
       if (!response.ok) {
         throw new Error('Failed to fetch gallery images');
       }
+      
       const data = await response.json();
+      console.log('API Response:', data);
+      
       if (data.success) {
-        setGalleryImages(data.data);
+        setGalleryImages(data.data || []);
+        console.log('Set images:', data.data?.length || 0);
+      } else {
+        throw new Error(data.error || 'Failed to fetch gallery data');
       }
     } catch (error) {
       console.error('Error fetching gallery images:', error);
+      setError(error instanceof Error ? error.message : 'Failed to load gallery');
+      setGalleryImages([]);
     } finally {
       setLoading(false);
     }
-  };
+  }, [activeCategory]);
 
-  const filteredImages = galleryImages.filter(
-    image => activeCategory === 'All' || image.category === activeCategory
-  );
+  useEffect(() => {
+    fetchGalleryImages();
+  }, [fetchGalleryImages]);
+
+  const handleCategoryChange = (category: Category) => {
+    console.log('Category button clicked:', category);
+    console.log('Current activeCategory:', activeCategory);
+    setActiveCategory(category);
+    fetchGalleryImages(category);
+  };
 
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -56,7 +81,7 @@ const GalleryPage = () => {
           <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-4 hover:scale-105 transition-transform duration-300 mt-1 text-center pb-10">
             Our Gallery
           </h1>
-          <p className="text-xl text-rose-100/90 max-w-3xl mx-auto mb-12">
+          <p className="text-xl text-rose-100/90 max-w-3xl mx-auto mb-4">
             Capturing moments of strength, unity, and empowerment from our community
           </p>
 
@@ -65,10 +90,11 @@ const GalleryPage = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 
+                onClick={() => handleCategoryChange(category)}
+                disabled={loading}
+                className={`px-6 py-2 rounded-full transition-all duration-300 disabled:opacity-50
                   ${activeCategory === category
-                    ? 'bg-gradient-to-r from-gray-500 to-gray-600 text-white font-medium shadow-lg'
+                    ? 'bg-gradient-to-r from-red-500 to-red-600 text-white font-medium shadow-lg'
                     : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
               >
@@ -82,20 +108,44 @@ const GalleryPage = () => {
         {loading ? (
           <div className="flex items-center justify-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-400"></div>
+            <p className="ml-4 text-rose-200">Loading gallery...</p>
           </div>
-        ) : filteredImages.length === 0 ? (
+        ) : error ? (
           <div className="text-center py-16">
-            <p className="text-xl text-rose-200/70">No images found in this category.</p>
-            <p className="text-rose-200/50 mt-2">Check back soon for new updates!</p>
+            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-8 max-w-2xl mx-auto">
+              <p className="text-red-400 text-lg font-medium mb-2">⚠️ Error Loading Gallery</p>
+              <p className="text-red-200/80">{error}</p>
+              <button 
+                onClick={() => fetchGalleryImages()}
+                className="mt-4 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors"
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
+        ) : galleryImages.length === 0 ? (
+          <div className="text-center py-16">
+            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-8 max-w-2xl mx-auto">
+              <p className="text-blue-400 text-xl font-medium mb-2">📸 No Images Found</p>
+              <p className="text-blue-200/80 mb-4">
+                {activeCategory === 'All' 
+                  ? 'No gallery images have been added yet.' 
+                  : `No images found in the "${activeCategory}" category.`
+                }
+              </p>
+              <p className="text-blue-200/60 text-sm">
+                Gallery images can be added through the admin panel.
+              </p>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredImages.map((image) => (
+            {galleryImages.map((image) => (
               <div 
                 key={image._id}
                 className="relative group overflow-hidden rounded-xl aspect-square
                   transform transition-all duration-500 hover:shadow-xl
-                  hover:shadow-rose-500/20"
+                  hover:shadow-rose-500/20 cursor-pointer"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent 
                   via-black/50 to-black/80 opacity-0 group-hover:opacity-100 
@@ -106,10 +156,11 @@ const GalleryPage = () => {
                       bg-black/50 rounded-full mb-3 inline-block">
                       {image.category}
                     </span>
-                    <h3 className="text-white font-semibold mt-2">{image.title}</h3>
-                    <p className="text-rose-200/80 text-sm mt-1 line-clamp-2">{image.description}</p>
-                    <div className="text-rose-200/60 text-xs mt-2">
-                      Views: {image.views} • {new Date(image.createdAt).toLocaleDateString()}
+                    <h3 className="text-white font-semibold mt-2 mb-2">{image.title}</h3>
+                    <p className="text-rose-200/80 text-sm mt-1 line-clamp-2 mb-2">{image.description}</p>
+                    <div className="text-rose-200/60 text-xs mt-2 flex items-center justify-center space-x-4">
+                      <span>👁️ {image.views} views</span>
+                      <span>📅 {new Date(image.createdAt).toLocaleDateString()}</span>
                     </div>
                   </div>
                 </div>
@@ -123,6 +174,34 @@ const GalleryPage = () => {
                 />
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Call to Action */}
+        {galleryImages.length > 0 && (
+          <div className="text-center mt-16">
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">
+                Join Our Empowerment Journey
+              </h3>
+              <p className="text-white/80 mb-6">
+                Be part of our community and attend our workshops, training sessions, and events.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/join-us" 
+                  className="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 font-medium"
+                >
+                  Join Our Community
+                </a>
+                <a 
+                  href="/contact" 
+                  className="bg-white/10 text-white px-6 py-3 rounded-xl hover:bg-white/20 transition-all duration-300 font-medium border border-white/20"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
           </div>
         )}
       </div>

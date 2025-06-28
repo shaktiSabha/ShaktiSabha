@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface JoinForm {
   name: string;
@@ -94,10 +95,12 @@ const CommunityPlatformPage = () => {
                 transition-all duration-300 group"
             >
               <div className="mb-4">
-                <img
+                <Image
                   src={platform.icon}
                   alt={`${platform.name} icon`}
-                  className="w-10 h-10 mx-auto"
+                  width={40}
+                  height={40}
+                  className="mx-auto"
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">

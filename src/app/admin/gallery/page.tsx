@@ -151,6 +151,28 @@ const GalleryManagement = () => {
     totalViews: galleryItems.reduce((sum, item) => sum + item.views, 0)
   };
 
+  const handleSeedGallery = async () => {
+    if (confirm('This will add sample gallery items to your database. Continue?')) {
+      try {
+        const response = await fetch('/api/gallery/seed', {
+          method: 'POST',
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          alert(`Gallery seeded successfully! Added ${data.insertedCount} items.`);
+          fetchGalleryItems(); // Refresh the list
+        } else {
+          alert(data.message || 'Failed to seed gallery');
+        }
+      } catch (error) {
+        console.error('Error seeding gallery:', error);
+        alert('Failed to seed gallery. Please try again.');
+      }
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -308,15 +330,33 @@ const GalleryManagement = () => {
           {filteredItems.length === 0 ? (
             <div className="text-center py-16">
               <ImageIcon className="mx-auto h-16 w-16 text-gray-500 mb-4" />
-              <h3 className="text-xl font-medium text-white mb-2">No images found</h3>
-              <p className="text-gray-400 mb-6">Get started by uploading your first image</p>
-              <a
-                href="/admin/gallery/new"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-colors"
-              >
-                <Upload className="h-5 w-5 mr-2" />
-                Upload Image
-              </a>
+              <h3 className="text-xl font-medium text-white mb-2">
+                {galleryItems.length === 0 ? "No gallery items found" : "No images match your search"}
+              </h3>
+              <p className="text-gray-400 mb-6">
+                {galleryItems.length === 0 
+                  ? "Get started by uploading your first image or adding sample data" 
+                  : "Try adjusting your search criteria or filters"
+                }
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/admin/gallery/new"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-colors"
+                >
+                  <Upload className="h-5 w-5 mr-2" />
+                  Upload Image
+                </a>
+                {galleryItems.length === 0 && (
+                  <button
+                    onClick={handleSeedGallery}
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-medium rounded-xl hover:from-green-700 hover:to-green-800 transition-all duration-200"
+                  >
+                    <Plus className="h-5 w-5 mr-2" />
+                    Add Sample Data
+                  </button>
+                )}
+              </div>
             </div>
           ) : viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

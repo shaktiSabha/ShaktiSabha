@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -25,13 +25,7 @@ export default function BlogPostPage() {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (params.id) {
-      fetchBlog(params.id as string);
-    }
-  }, [params.id]);
-
-  const fetchBlog = async (id: string) => {
+  const fetchBlog = useCallback(async (id: string) => {
     try {
       const response = await fetch(`/api/blogs/${id}`);
       if (response.ok) {
@@ -46,7 +40,13 @@ export default function BlogPostPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    if (params.id) {
+      fetchBlog(params.id as string);
+    }
+  }, [params.id, fetchBlog]);
 
   const handleShare = () => {
     if (navigator.share) {

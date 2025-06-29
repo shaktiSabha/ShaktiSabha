@@ -25,8 +25,9 @@ const GalleryPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const fetchGalleryImages = useCallback(async (category: Category = activeCategory) => {
+  const fetchGalleryImages = useCallback(async (category: Category) => {
     try {
+      console.log('🚀 Starting fetch for category:', category);
       setLoading(true);
       setError(null);
       
@@ -37,40 +38,53 @@ const GalleryPage = () => {
       }
       url.searchParams.set('status', 'published');
       
-      console.log('Fetching gallery with URL:', url.toString());
-      console.log('Category:', category);
+      console.log('📡 Fetching gallery with URL:', url.toString());
       
-      const response = await fetch(url.toString());
+      const response = await fetch(url.toString(), {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       
       if (!response.ok) {
-        throw new Error('Failed to fetch gallery images');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const data = await response.json();
-      console.log('API Response:', data);
+      console.log('✅ API Response:', data);
       
       if (data.success) {
         setGalleryImages(data.data || []);
-        console.log('Set images:', data.data?.length || 0);
+        console.log('📸 Images loaded:', data.data?.length || 0);
       } else {
         throw new Error(data.error || 'Failed to fetch gallery data');
       }
     } catch (error) {
-      console.error('Error fetching gallery images:', error);
+      console.error('❌ Error fetching gallery images:', error);
       setError(error instanceof Error ? error.message : 'Failed to load gallery');
       setGalleryImages([]);
     } finally {
       setLoading(false);
     }
-  }, [activeCategory]);
+  }, []);
 
   useEffect(() => {
-    fetchGalleryImages();
-  }, [fetchGalleryImages]);
+    fetchGalleryImages(activeCategory);
+  }, [fetchGalleryImages, activeCategory]);
 
   const handleCategoryChange = (category: Category) => {
-    console.log('Category button clicked:', category);
-    console.log('Current activeCategory:', activeCategory);
+    console.log('🔘 Category button clicked:', category);
+    console.log('📍 Current activeCategory:', activeCategory);
+    console.log('⏳ Loading state:', loading);
+    
+    // Prevent if loading (but allow same category to be clicked for refresh)
+    if (loading) {
+      console.log('⚠️ Blocked - Currently loading');
+      return;
+    }
+    
+    console.log('✅ Setting active category to:', category);
     setActiveCategory(category);
     fetchGalleryImages(category);
   };
@@ -140,13 +154,13 @@ const GalleryPage = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => handleCategoryChange(category)}
+                onClick={() => {
+                  console.log('🖱️ Direct button click for category:', category);
+                  handleCategoryChange(category);
+                }}
                 disabled={loading}
-                className={`px-6 py-2 rounded-full transition-all duration-300 disabled:opacity-50
-                  ${activeCategory === category
-                    ? 'bg-gradient-to-r from-red-500 to-red-600 text-white font-medium shadow-lg'
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                  }`}
+                className={`px-6 py-3 rounded-full transition-all duration-300 font-medium text-sm transform hover:shadow-xl active:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed ${loading ? 'cursor-wait' : 'cursor-pointer'} ${activeCategory === category ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg border-2 border-red-400 scale-105' : 'bg-white/15 text-white border-2 border-white/30 hover:bg-white/25 hover:border-white/50 hover:scale-105 active:scale-95'}`}
+                type="button"
               >
                 {category}
               </button>
@@ -166,7 +180,7 @@ const GalleryPage = () => {
               <p className="text-red-400 text-lg font-medium mb-2">⚠️ Error Loading Gallery</p>
               <p className="text-red-200/80">{error}</p>
               <button 
-                onClick={() => fetchGalleryImages()}
+                onClick={() => fetchGalleryImages(activeCategory)}
                 className="mt-4 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors"
               >
                 Try Again

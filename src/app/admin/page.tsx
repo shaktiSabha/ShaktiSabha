@@ -7,7 +7,8 @@ import {
   BookOpen, 
   TrendingUp, 
   Eye,
-  Plus
+  Plus,
+  Mail
 } from 'lucide-react';
 
 interface DashboardStats {
@@ -15,6 +16,7 @@ interface DashboardStats {
   totalBlogs: number;
   totalServices: number;
   totalGalleryItems: number;
+  totalContacts: number;
   recentActivity: Array<{
     id: string;
     type: string;
@@ -30,6 +32,7 @@ const AdminDashboard = () => {
     totalBlogs: 0,
     totalServices: 0,
     totalGalleryItems: 0,
+    totalContacts: 0,
     recentActivity: []
   });
 
@@ -40,6 +43,7 @@ const AdminDashboard = () => {
       totalBlogs: 45,
       totalServices: 12,
       totalGalleryItems: 89,
+      totalContacts: 23,
       recentActivity: [
         {
           id: '1',
@@ -105,6 +109,14 @@ const AdminDashboard = () => {
       color: 'bg-orange-600',
       change: '+8%',
       changeType: 'positive'
+    },
+    {
+      title: 'Contact Messages',
+      value: stats.totalContacts,
+      icon: Mail,
+      color: 'bg-red-600',
+      change: '+15%',
+      changeType: 'positive'
     }
   ];
 
@@ -112,7 +124,7 @@ const AdminDashboard = () => {
     { name: 'Add New Blog', href: '/admin/blogs/new', icon: Plus },
     { name: 'Add New Service', href: '/admin/services/new', icon: Plus },
     { name: 'Upload Gallery Image', href: '/admin/gallery/new', icon: Plus },
-    { name: 'View Analytics', href: '/admin/analytics', icon: TrendingUp }
+    { name: 'Manage Contacts', href: '/admin/contacts', icon: TrendingUp }
   ];
 
   return (
@@ -124,7 +136,7 @@ const AdminDashboard = () => {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
         {statsCards.map((card) => {
           const Icon = card.icon;
           return (

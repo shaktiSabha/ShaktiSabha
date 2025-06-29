@@ -102,30 +102,32 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-full overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-white flex items-center">
-            <SettingsIcon className="mr-3 h-8 w-8" />
-            Website Settings
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-white flex items-center">
+            <SettingsIcon className="mr-2 sm:mr-3 h-6 w-6 sm:h-8 sm:w-8 flex-shrink-0" />
+            <span className="truncate">Website Settings</span>
           </h1>
-          <p className="text-gray-300 mt-1">Manage your website configuration and branding</p>
+          <p className="text-gray-300 mt-1 text-sm sm:text-base">Manage your website configuration and branding</p>
         </div>
         <Button
           onClick={handleSave}
           disabled={saving}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 flex-shrink-0"
         >
           {saving ? (
             <>
               <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent mr-2"></div>
-              Saving...
+              <span className="hidden sm:inline">Saving...</span>
+              <span className="sm:hidden">...</span>
             </>
           ) : (
             <>
               <Save className="mr-2 h-4 w-4" />
-              Save Changes
+              <span className="hidden sm:inline">Save Changes</span>
+              <span className="sm:hidden">Save</span>
             </>
           )}
         </Button>
@@ -142,14 +144,14 @@ export default function SettingsPage() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Website Logo */}
-        <Card className="bg-gray-800 border-gray-700 p-6">
+        <Card className="bg-gray-800 border-gray-700 p-4 md:p-6 overflow-hidden">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
             <Upload className="mr-2 h-5 w-5" />
             Website Logo
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-4 min-h-0">
             <ImageUpload
               onImageUpload={(imageUrl) => {
                 setSettings(prev => prev ? {
@@ -164,27 +166,33 @@ export default function SettingsPage() {
             {settings.logoUrl && (
               <div className="mt-4">
                 <p className="text-sm text-gray-300 mb-2">Current Logo:</p>
-                <div className="relative max-w-xs max-h-24 bg-white rounded-lg p-2">
-                  <Image
-                    src={settings.logoUrl}
-                    alt="Website Logo"
-                    width={200}
-                    height={96}
-                    className="object-contain w-full h-full"
-                  />
+                <div className="w-full max-w-sm mx-auto bg-white rounded-lg p-3 shadow-md overflow-hidden">
+                  <div className="relative w-full h-20 flex items-center justify-center">
+                    <Image
+                      src={settings.logoUrl}
+                      alt="Website Logo"
+                      width={200}
+                      height={80}
+                      className="object-contain max-w-full max-h-full"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
+                  </div>
                 </div>
+                <p className="text-xs text-gray-400 text-center mt-2">
+                  Logo will be resized automatically to fit
+                </p>
               </div>
             )}
           </div>
         </Card>
 
         {/* Basic Information */}
-        <Card className="bg-gray-800 border-gray-700 p-6">
+        <Card className="bg-gray-800 border-gray-700 p-4 md:p-6 overflow-hidden">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
             <Globe className="mr-2 h-5 w-5" />
             Basic Information
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-4 min-h-0">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
                 Website Name
@@ -192,7 +200,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.websiteName}
                 onChange={(e) => handleInputChange('websiteName', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="Enter website name"
               />
             </div>
@@ -203,7 +211,7 @@ export default function SettingsPage() {
               <Textarea
                 value={settings.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0 resize-none"
                 placeholder="Enter website description"
                 rows={3}
               />
@@ -212,12 +220,12 @@ export default function SettingsPage() {
         </Card>
 
         {/* Contact Information */}
-        <Card className="bg-gray-800 border-gray-700 p-6">
+        <Card className="bg-gray-800 border-gray-700 p-4 md:p-6 overflow-hidden">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
             <Mail className="mr-2 h-5 w-5" />
             Contact Information
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-4 min-h-0">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
                 Contact Email
@@ -226,7 +234,7 @@ export default function SettingsPage() {
                 type="email"
                 value={settings.contactEmail}
                 onChange={(e) => handleInputChange('contactEmail', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="Enter contact email"
               />
             </div>
@@ -238,7 +246,7 @@ export default function SettingsPage() {
                 type="tel"
                 value={settings.contactPhone}
                 onChange={(e) => handleInputChange('contactPhone', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="Enter contact phone"
               />
             </div>
@@ -246,11 +254,11 @@ export default function SettingsPage() {
         </Card>
 
         {/* Social Media */}
-        <Card className="bg-gray-800 border-gray-700 p-6">
+        <Card className="bg-gray-800 border-gray-700 p-4 md:p-6 overflow-hidden">
           <h3 className="text-lg font-semibold text-white mb-4">
             Social Media Links
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-4 min-h-0">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2 flex items-center">
                 <Facebook className="mr-2 h-4 w-4" />
@@ -259,7 +267,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.socialMedia.facebook}
                 onChange={(e) => handleInputChange('socialMedia.facebook', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="https://facebook.com/yourpage"
               />
             </div>
@@ -271,7 +279,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.socialMedia.instagram}
                 onChange={(e) => handleInputChange('socialMedia.instagram', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="https://instagram.com/yourprofile"
               />
             </div>
@@ -283,7 +291,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.socialMedia.twitter}
                 onChange={(e) => handleInputChange('socialMedia.twitter', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="https://twitter.com/yourprofile"
               />
             </div>
@@ -295,7 +303,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.socialMedia.youtube}
                 onChange={(e) => handleInputChange('socialMedia.youtube', e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white"
+                className="bg-gray-700 border-gray-600 text-white w-full min-w-0"
                 placeholder="https://youtube.com/yourchannel"
               />
             </div>
@@ -304,21 +312,23 @@ export default function SettingsPage() {
       </div>
 
       {/* Save Button at Bottom */}
-      <div className="flex justify-end pt-6 border-t border-gray-700">
+      <div className="flex justify-center sm:justify-end pt-6 border-t border-gray-700">
         <Button
           onClick={handleSave}
           disabled={saving}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 text-base sm:text-lg w-full sm:w-auto max-w-xs sm:max-w-none"
         >
           {saving ? (
             <>
               <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
-              Saving Changes...
+              <span className="hidden sm:inline">Saving Changes...</span>
+              <span className="sm:hidden">Saving...</span>
             </>
           ) : (
             <>
               <Save className="mr-2 h-5 w-5" />
-              Save All Changes
+              <span className="hidden sm:inline">Save All Changes</span>
+              <span className="sm:hidden">Save All</span>
             </>
           )}
         </Button>

@@ -10,7 +10,8 @@ import {
   BookOpen,
   LogOut,
   Menu,
-  X
+  X,
+  Mail
 } from 'lucide-react';
 
 interface AdminLayoutProps {
@@ -59,7 +60,8 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
     { name: 'Blogs', href: '/admin/blogs', icon: FileText },
     { name: 'Services', href: '/admin/services', icon: BookOpen },
     { name: 'Gallery', href: '/admin/gallery', icon: Image },
-    { name: 'Users', href: '/admin/users', icon: Users },
+    { name: 'Contacts', href: '/admin/contacts', icon: Mail },
+    { name: 'Testimonials', href: '/admin/testimonials', icon: Users },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
 

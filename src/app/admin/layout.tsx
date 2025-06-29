@@ -11,7 +11,8 @@ import {
   LogOut,
   Menu,
   X,
-  Mail
+  Mail,
+  Video
 } from 'lucide-react';
 
 interface AdminLayoutProps {
@@ -60,6 +61,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
     { name: 'Blogs', href: '/admin/blogs', icon: FileText },
     { name: 'Services', href: '/admin/services', icon: BookOpen },
     { name: 'Gallery', href: '/admin/gallery', icon: Image },
+    { name: 'Media', href: '/admin/media', icon: Video },
     { name: 'Contacts', href: '/admin/contacts', icon: Mail },
     { name: 'Testimonials', href: '/admin/testimonials', icon: Users },
     { name: 'Settings', href: '/admin/settings', icon: Settings },

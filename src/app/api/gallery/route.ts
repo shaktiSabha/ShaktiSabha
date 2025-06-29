@@ -19,12 +19,13 @@ export async function GET(request: NextRequest) {
       query.category = category;
     }
     
-    if (status) {
+    if (status && status !== 'all') {
       query.status = status;
-    } else {
-      // For public API, only show published by default
+    } else if (!status) {
+      // For public API, only show published by default when no status is specified
       query.status = 'published';
     }
+    // If status is 'all', don't add status filter to show all items
     
     if (featured === 'true') {
       query.featured = true;

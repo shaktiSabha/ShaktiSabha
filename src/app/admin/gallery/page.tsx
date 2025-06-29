@@ -13,7 +13,6 @@ import {
   List,
   Star,
   Calendar,
-  TrendingUp,
   ExternalLink
 } from 'lucide-react';
 
@@ -26,7 +25,6 @@ interface GalleryItem {
   status: 'published' | 'draft';
   createdAt: string;
   updatedAt: string;
-  views: number;
   featured: boolean;
 }
 
@@ -39,7 +37,6 @@ interface ApiGalleryItem {
   status: 'published' | 'draft';
   createdAt: string;
   updatedAt: string;
-  views: number;
   featured: boolean;
 }
 
@@ -74,7 +71,6 @@ const GalleryManagement = () => {
           status: item.status,
           createdAt: new Date(item.createdAt).toLocaleDateString(),
           updatedAt: new Date(item.updatedAt).toLocaleDateString(),
-          views: item.views,
           featured: item.featured
         })));
       }
@@ -147,8 +143,7 @@ const GalleryManagement = () => {
     total: galleryItems.length,
     published: galleryItems.filter(item => item.status === 'published').length,
     draft: galleryItems.filter(item => item.status === 'draft').length,
-    featured: galleryItems.filter(item => item.featured).length,
-    totalViews: galleryItems.reduce((sum, item) => sum + item.views, 0)
+    featured: galleryItems.filter(item => item.featured).length
   };
 
   const handleSeedGallery = async () => {
@@ -209,7 +204,7 @@ const GalleryManagement = () => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             <div className="bg-gradient-to-r from-blue-900/50 to-blue-800/50 p-4 rounded-xl border border-blue-700/50">
               <div className="flex items-center justify-between">
                 <div>
@@ -246,15 +241,7 @@ const GalleryManagement = () => {
                 <Star className="h-8 w-8 text-purple-400" />
               </div>
             </div>
-            <div className="bg-gradient-to-r from-indigo-900/50 to-indigo-800/50 p-4 rounded-xl border border-indigo-700/50">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-indigo-300 text-sm font-medium">Total Views</p>
-                  <p className="text-2xl font-bold text-indigo-100">{stats.totalViews.toLocaleString()}</p>
-                </div>
-                <TrendingUp className="h-8 w-8 text-indigo-400" />
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -387,13 +374,7 @@ const GalleryManagement = () => {
                       </button>
                     </div>
 
-                    {/* Views Badge */}
-                    <div className="absolute bottom-3 left-3">
-                      <span className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-medium bg-black/50 text-white backdrop-blur-sm">
-                        <Eye className="h-3 w-3 mr-1" />
-                        {item.views}
-                      </span>
-                    </div>
+
                   </div>
                   
                   <div className="p-4">
@@ -445,10 +426,7 @@ const GalleryManagement = () => {
                         <p className="text-gray-300 text-sm line-clamp-2 mt-1">{item.description}</p>
                         <div className="flex items-center gap-4 mt-2">
                           <span className="text-sm text-gray-400">{item.category}</span>
-                          <span className="text-sm text-gray-400">
-                            <Eye className="h-4 w-4 inline mr-1" />
-                            {item.views} views
-                          </span>
+
                           <span className="text-sm text-gray-400">
                             <Calendar className="h-4 w-4 inline mr-1" />
                             {item.createdAt}

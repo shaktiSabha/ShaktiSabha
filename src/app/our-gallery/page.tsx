@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { X, ChevronLeft, ChevronRight, ZoomIn, Calendar } from 'lucide-react';
 
 const categories = ['All', 'Workshops', 'Community', 'Training', 'Events', 'Conferences', 'Other'] as const;
 type Category = (typeof categories)[number];
@@ -13,7 +14,6 @@ interface GalleryImage {
   imageUrl: string;
   category: string;
   alt: string;
-  views: number;
   createdAt: string;
 }
 
@@ -22,6 +22,8 @@ const GalleryPage = () => {
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const fetchGalleryImages = useCallback(async (category: Category = activeCategory) => {
     try {
@@ -72,6 +74,54 @@ const GalleryPage = () => {
     setActiveCategory(category);
     fetchGalleryImages(category);
   };
+
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    document.body.style.overflow = 'auto'; // Restore scroll
+  };
+
+  const goToNextImage = useCallback(() => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  }, [galleryImages.length]);
+
+  const goToPreviousImage = useCallback(() => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  }, [galleryImages.length]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!modalOpen) return;
+      
+      switch (e.key) {
+        case 'Escape':
+          closeModal();
+          break;
+        case 'ArrowRight':
+          goToNextImage();
+          break;
+        case 'ArrowLeft':
+          goToPreviousImage();
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [modalOpen, goToNextImage, goToPreviousImage]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -140,9 +190,10 @@ const GalleryPage = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image) => (
+            {galleryImages.map((image, index) => (
               <div 
                 key={image._id}
+                onClick={() => openModal(index)}
                 className="relative group overflow-hidden rounded-xl aspect-square
                   transform transition-all duration-500 hover:shadow-xl
                   hover:shadow-rose-500/20 cursor-pointer"
@@ -158,8 +209,7 @@ const GalleryPage = () => {
                     </span>
                     <h3 className="text-white font-semibold mt-2 mb-2">{image.title}</h3>
                     <p className="text-rose-200/80 text-sm mt-1 line-clamp-2 mb-2">{image.description}</p>
-                    <div className="text-rose-200/60 text-xs mt-2 flex items-center justify-center space-x-4">
-                      <span>👁️ {image.views} views</span>
+                    <div className="text-rose-200/60 text-xs mt-2 flex items-center justify-center">
                       <span>📅 {new Date(image.createdAt).toLocaleDateString()}</span>
                     </div>
                   </div>
@@ -202,6 +252,96 @@ const GalleryPage = () => {
                 </a>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Image Modal/Lightbox */}
+        {modalOpen && galleryImages.length > 0 && (
+          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-200"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Previous button */}
+            {galleryImages.length > 1 && (
+              <button
+                onClick={goToPreviousImage}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-200"
+              >
+                <ChevronLeft className="w-8 h-8 text-white" />
+              </button>
+            )}
+
+            {/* Next button */}
+            {galleryImages.length > 1 && (
+              <button
+                onClick={goToNextImage}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-200"
+              >
+                <ChevronRight className="w-8 h-8 text-white" />
+              </button>
+            )}
+
+            {/* Main image container */}
+            <div className="relative w-full h-full max-w-6xl max-h-full flex items-center justify-center">
+              <div className="relative max-w-full max-h-full">
+                <Image
+                  src={galleryImages[currentImageIndex]?.imageUrl || ''}
+                  alt={galleryImages[currentImageIndex]?.alt || ''}
+                  width={1200}
+                  height={800}
+                  className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                  priority
+                />
+                
+                {/* Image info overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="inline-flex items-center px-3 py-1.5 bg-red-500/80 text-white text-sm font-medium rounded-full">
+                      {galleryImages[currentImageIndex]?.category}
+                    </span>
+                    <div className="flex items-center gap-4 text-white/80 text-sm">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {new Date(galleryImages[currentImageIndex]?.createdAt).toLocaleDateString()}
+                      </span>
+                    </div>
+                  </div>
+                  <h2 className="text-white text-xl font-bold mb-2">
+                    {galleryImages[currentImageIndex]?.title}
+                  </h2>
+                  <p className="text-white/90 text-sm leading-relaxed">
+                    {galleryImages[currentImageIndex]?.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image counter */}
+            {galleryImages.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <span className="text-white text-sm font-medium">
+                  {currentImageIndex + 1} / {galleryImages.length}
+                </span>
+              </div>
+            )}
+
+            {/* Zoom hint */}
+            <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
+              <ZoomIn className="w-4 h-4 text-white" />
+              <span className="text-white text-xs">Click image to zoom</span>
+            </div>
+
+            {/* Navigation hint */}
+            {galleryImages.length > 1 && (
+              <div className="absolute top-16 left-4 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
+                <span className="text-white text-xs">Use ← → keys or click arrows</span>
+              </div>
+            )}
           </div>
         )}
       </div>

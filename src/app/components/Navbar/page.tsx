@@ -26,7 +26,7 @@ const Logo = () => (
     <span className="text-lg md:text-2xl font-bold bg-red-400 bg-clip-text 
       text-transparent hover:from-white hover:to-white transform 
       hover:scale-105 transition-all duration-300">
-      Shakti<span className="hidden sm:inline"> Sabha</span>
+      Shakti Sabha
     </span>
   </Link>
 );

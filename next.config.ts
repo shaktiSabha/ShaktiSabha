@@ -55,6 +55,12 @@ const nextConfig: NextConfig = {
         hostname: 'via.placeholder.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        port: '',
+        pathname: '/**',
       }
     ],
     // Optimize image loading
@@ -64,7 +70,7 @@ const nextConfig: NextConfig = {
   },
   
   // Webpack optimizations
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev }) => {
     if (dev) {
       // Reduce filesystem watchers in development
       config.watchOptions = {

@@ -61,16 +61,65 @@ export default function BlogSection() {
     return (
       <div className="min-h-screen relative">
         <div className="relative z-10 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-6 mt-1 hover:scale-105 transition-transform duration-300">
+          {/* Back Button Skeleton */}
+          <div className="mb-8">
+            <div className="w-20 h-10 bg-white/10 backdrop-blur-md rounded-lg animate-pulse"></div>
+          </div>
+
+          {/* Header Section */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold text-red-400 mb-6 mt-1">
               Latest Articles
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-8">
               Discover insights, stories, and knowledge from our community
             </p>
+            
+            {/* Search Bar Skeleton */}
+            <div className="max-w-md mx-auto">
+              <div className="w-full h-12 bg-white/10 backdrop-blur-md rounded-full animate-pulse"></div>
+            </div>
           </div>
-          <div className="flex items-center justify-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-4 border-red-400 border-t-transparent"></div>
+
+          {/* Blog Grid Skeleton */}
+          <div className="grid gap-8 sm:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div 
+                key={i} 
+                className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 animate-pulse"
+              >
+                {/* Image Skeleton */}
+                <div className="h-48 sm:h-56 bg-gray-600 rounded-xl mb-6"></div>
+                
+                {/* Content Skeleton */}
+                <div className="space-y-4">
+                  {/* Title Skeleton */}
+                  <div className="space-y-2">
+                    <div className="h-6 bg-gray-600 rounded w-3/4"></div>
+                    <div className="h-6 bg-gray-600 rounded w-1/2"></div>
+                  </div>
+                  
+                  {/* Excerpt Skeleton */}
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-700 rounded w-full"></div>
+                    <div className="h-4 bg-gray-700 rounded w-full"></div>
+                    <div className="h-4 bg-gray-700 rounded w-2/3"></div>
+                  </div>
+                  
+                  {/* Meta Information Skeleton */}
+                  <div className="flex items-center justify-between">
+                    <div className="h-4 bg-gray-700 rounded w-20"></div>
+                    <div className="h-4 bg-gray-700 rounded w-24"></div>
+                  </div>
+                  
+                  {/* Views Skeleton */}
+                  <div className="h-4 bg-gray-700 rounded w-16"></div>
+                  
+                  {/* Button Skeleton */}
+                  <div className="h-12 bg-gray-600 rounded-xl mt-6"></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

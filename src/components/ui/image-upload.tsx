@@ -8,9 +8,10 @@ import { Upload, X, Image as ImageIcon } from 'lucide-react';
 interface ImageUploadProps {
   onImageUpload: (imageUrl: string) => void;
   currentImage?: string;
+  label?: string;
 }
 
-export function ImageUpload({ onImageUpload, currentImage }: ImageUploadProps) {
+export function ImageUpload({ onImageUpload, currentImage, label = "Image" }: ImageUploadProps) {
   const [previewUrl, setPreviewUrl] = useState<string | null>(currentImage || null);
   const [uploading, setUploading] = useState(false);
 
@@ -60,7 +61,7 @@ export function ImageUpload({ onImageUpload, currentImage }: ImageUploadProps) {
     <div className="space-y-4">
       <div className="flex items-center space-x-2">
         <ImageIcon className="h-5 w-5 text-gray-400" />
-        <span className="text-sm font-medium text-gray-300">Blog Image</span>
+        <span className="text-sm font-medium text-gray-300">{label}</span>
       </div>
       
       {previewUrl ? (

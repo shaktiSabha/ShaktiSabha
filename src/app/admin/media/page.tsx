@@ -79,26 +79,7 @@ const MediaManagement = () => {
     }
   };
 
-  const handleSeedData = async () => {
-    if (confirm('This will add sample media data to your database. Continue?')) {
-      try {
-        const response = await fetch('/api/media/seed', {
-          method: 'POST',
-        });
-        const data = await response.json();
-        
-        if (data.success) {
-          alert(`Successfully added ${data.insertedCount} media items!`);
-          fetchMediaItems();
-        } else {
-          alert(data.message || 'Failed to seed data');
-        }
-      } catch (error) {
-        console.error('Error seeding data:', error);
-        alert('Failed to seed data');
-      }
-    }
-  };
+
 
   const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this media item?')) {
@@ -154,7 +135,7 @@ const MediaManagement = () => {
 
   const getThumbnailUrl = (embedUrl: string) => {
     const videoId = embedUrl.split('embed/')[1]?.split('?')[0];
-    return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
+    return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
   };
 
   if (loading) {
@@ -192,13 +173,6 @@ const MediaManagement = () => {
               className="bg-blue-800 border-blue-600 text-white hover:bg-blue-700"
             >
               Sync YouTube Views
-            </Button>
-            <Button
-              onClick={handleSeedData}
-              variant="outline"
-              className="bg-gray-800 border-gray-600 text-white hover:bg-gray-700"
-            >
-              Add Sample Data
             </Button>
             <a
               href="/admin/media/new"
@@ -279,6 +253,10 @@ const MediaManagement = () => {
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://via.placeholder.com/480x360/1f2937/9ca3af?text=Video+Thumbnail';
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   

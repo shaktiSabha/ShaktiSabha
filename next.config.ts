@@ -1,17 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Performance optimizations
-  experimental: {
-    // Reduce filesystem watchers for better performance
-    turbo: {
-      resolveAlias: {
-        // Reduce resolution overhead
-        '@': './src',
-      },
-    },
-  },
-
   // Optimize compilation
   typescript: {
     // Skip type checking during build for faster development
@@ -57,7 +46,7 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack optimizations
+  // Webpack optimizations (only used when --webpack flag is passed)
   webpack: (config, { dev }) => {
     if (dev) {
       // Reduce filesystem watchers in development
@@ -76,6 +65,9 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+
+  // Turbopack configuration (Next.js 16+ default)
+  turbopack: {},
 };
 
 export default nextConfig;

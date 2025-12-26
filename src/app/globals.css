@@ -8,7 +8,7 @@
   --yellow-secondary: #F4C430;
   --yellow-light: #FFF8DC;
   --yellow-dark: #B8860B;
-  
+
   /* Amber colors */
   --amber-50: #fffbeb;
   --amber-100: #fef3c7;
@@ -21,12 +21,12 @@
   --amber-800: #92400e;
   --amber-900: #78350f;
   --amber-950: #451a03;
-  
+
   /* Theme defaults */
   --text-primary: var(--amber-400);
   --text-secondary: var(--amber-200);
   --bg-primary: #000000;
-  
+
   /* UI Colors */
   --background: 0 0% 3.9%;
   --foreground: 0 0% 98%;
@@ -54,11 +54,11 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     background: linear-gradient(to bottom, transparent, rgb(var(--background))) rgb(var(--background));
@@ -69,19 +69,19 @@
   .backdrop-blur-md {
     backdrop-filter: blur(12px);
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-yellow-800;
   }
-  
+
   .hover-gradient {
     @apply hover:bg-gradient-to-r hover:from-yellow-800 hover:to-yellow-600;
   }
-  
+
   .text-gradient-amber {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600;
   }
-  
+
   .hover-gradient-amber {
     @apply hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-700;
   }
@@ -118,7 +118,8 @@
     position: relative;
   }
 
-  .aspect-w-16 > *, .aspect-h-9 > * {
+  .aspect-w-16>*,
+  .aspect-h-9>* {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -130,30 +131,40 @@
 
   /* Custom animations for error pages */
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
   }
 
   @keyframes float-slow {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px) rotate(0deg);
     }
+
     50% {
       transform: translateY(-30px) rotate(180deg);
     }
   }
 
   @keyframes float-medium {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px) translateX(0px);
     }
+
     25% {
       transform: translateY(-15px) translateX(10px);
     }
+
     75% {
       transform: translateY(-10px) translateX(-10px);
     }
@@ -169,6 +180,24 @@
 
   .animate-float-medium {
     animation: float-medium 2.5s ease-in-out infinite;
+  }
+
+  /* Gradient animation for blog page */
+  @keyframes gradient {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
   }
 }
 
@@ -314,7 +343,8 @@
   color: #374151;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   margin: 1rem 0;
   padding-left: 1.5rem;
 }

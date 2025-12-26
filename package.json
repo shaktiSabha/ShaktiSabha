@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate:images": "node scripts/migrate-images.mjs",
+    "test:cloudinary": "node scripts/test-cloudinary.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.7",
@@ -19,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.474.0",
     "mongodb": "^6.17.0",

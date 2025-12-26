@@ -49,6 +49,19 @@ const NewGalleryPage = () => {
     const file = event.target.files?.[0];
     if (!file) return;
 
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file (PNG, JPG, GIF, etc.)');
+      return;
+    }
+
+    // Validate file size (10MB)
+    const maxSize = 10 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert('File size must be less than 10MB');
+      return;
+    }
+
     // Show preview immediately
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -59,28 +72,36 @@ const NewGalleryPage = () => {
     setUploading(true);
 
     try {
+      console.log('Starting upload:', file.name, file.size, file.type);
+
       const formDataUpload = new FormData();
       formDataUpload.append('file', file);
-      formDataUpload.append('folder', 'shakti-sabha-gallery'); // Specify gallery folder
+      formDataUpload.append('folder', 'shakti-sabha-gallery');
 
       const response = await fetch('/api/upload-image', {
         method: 'POST',
         body: formDataUpload,
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Upload failed');
+        console.error('Upload failed:', data);
+        throw new Error(data.error || data.details || 'Upload failed');
       }
 
-      const data = await response.json();
+      console.log('Upload successful:', data);
+
       setFormData(prev => ({
         ...prev,
         imageUrl: data.imageUrl,
         imagePublicId: data.publicId
       }));
-    } catch (error) {
+
+      alert('Image uploaded successfully!');
+    } catch (error: any) {
       console.error('Upload error:', error);
-      alert('Upload failed. Please try again.');
+      alert(`Upload failed: ${error.message || 'Please check console for details'}`);
       setPreviewUrl(null);
     } finally {
       setUploading(false);
@@ -98,7 +119,7 @@ const NewGalleryPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.title || !formData.description || !formData.imageUrl || !formData.alt) {
       alert('Please fill in all required fields and upload an image.');
       return;
@@ -120,7 +141,7 @@ const NewGalleryPage = () => {
       }
 
       const result = await response.json();
-      
+
       if (result.success) {
         alert('Gallery item created successfully!');
         router.push('/admin/gallery');
@@ -161,7 +182,7 @@ const NewGalleryPage = () => {
             <ImageIcon className="h-5 w-5 text-gray-400" />
             <span className="text-sm font-medium text-gray-300">Gallery Image *</span>
           </div>
-          
+
           {previewUrl ? (
             <div className="relative w-full h-64">
               <Image
@@ -183,9 +204,9 @@ const NewGalleryPage = () => {
               <Upload className="mx-auto h-12 w-12 text-gray-400" />
               <div className="mt-4">
                 <label htmlFor="image-upload" className="cursor-pointer w-full">
-                  <Button 
-                    type="button" 
-                    variant="outline" 
+                  <Button
+                    type="button"
+                    variant="outline"
                     disabled={uploading}
                     className="w-full"
                     asChild

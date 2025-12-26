@@ -74,7 +74,7 @@ export default function BlogSection() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-8">
               Discover insights, stories, and knowledge from our community
             </p>
-            
+
             {/* Search Bar Skeleton */}
             <div className="max-w-md mx-auto">
               <div className="w-full h-12 bg-white/10 backdrop-blur-md rounded-full animate-pulse"></div>
@@ -84,13 +84,13 @@ export default function BlogSection() {
           {/* Blog Grid Skeleton */}
           <div className="grid gap-8 sm:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 animate-pulse"
               >
                 {/* Image Skeleton */}
                 <div className="h-48 sm:h-56 bg-gray-600 rounded-xl mb-6"></div>
-                
+
                 {/* Content Skeleton */}
                 <div className="space-y-4">
                   {/* Title Skeleton */}
@@ -98,23 +98,23 @@ export default function BlogSection() {
                     <div className="h-6 bg-gray-600 rounded w-3/4"></div>
                     <div className="h-6 bg-gray-600 rounded w-1/2"></div>
                   </div>
-                  
+
                   {/* Excerpt Skeleton */}
                   <div className="space-y-2">
                     <div className="h-4 bg-gray-700 rounded w-full"></div>
                     <div className="h-4 bg-gray-700 rounded w-full"></div>
                     <div className="h-4 bg-gray-700 rounded w-2/3"></div>
                   </div>
-                  
+
                   {/* Meta Information Skeleton */}
                   <div className="flex items-center justify-between">
                     <div className="h-4 bg-gray-700 rounded w-20"></div>
                     <div className="h-4 bg-gray-700 rounded w-24"></div>
                   </div>
-                  
+
                   {/* Views Skeleton */}
                   <div className="h-4 bg-gray-700 rounded w-16"></div>
-                  
+
                   {/* Button Skeleton */}
                   <div className="h-12 bg-gray-600 rounded-xl mt-6"></div>
                 </div>
@@ -149,7 +149,7 @@ export default function BlogSection() {
           <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-8">
             Discover insights, stories, and knowledge from our community
           </p>
-          
+
           {/* Search Bar */}
           <div className="max-w-md mx-auto relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -174,8 +174,8 @@ export default function BlogSection() {
                 {searchTerm ? 'No articles found' : 'No articles available yet'}
               </h3>
               <p className="text-gray-300">
-                {searchTerm 
-                  ? 'Try adjusting your search terms' 
+                {searchTerm
+                  ? 'Try adjusting your search terms'
                   : 'Check back soon for new content'
                 }
               </p>
@@ -184,20 +184,28 @@ export default function BlogSection() {
         ) : (
           <div className="grid gap-8 sm:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {filteredBlogs.map((blog) => (
-              <div 
-                key={blog._id} 
+              <div
+                key={blog._id}
                 className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer"
                 onClick={() => handleReadMore(blog._id)}
               >
                 {/* Image Section */}
-                <div className="relative h-48 sm:h-56 overflow-hidden rounded-xl mb-6">
-                  <Image
-                    src={blog.imageUrl}
-                    alt={blog.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    width={256}
-                    height={256}
-                  />
+                <div className="relative h-48 sm:h-56 overflow-hidden rounded-xl mb-6 bg-gray-700">
+                  {blog.imageUrl && blog.imageUrl.startsWith('https://') ? (
+                    <Image
+                      src={blog.imageUrl}
+                      alt={blog.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      width={400}
+                      height={300}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
+                      <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4">
                     <span className="bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -205,7 +213,7 @@ export default function BlogSection() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Content Section */}
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-red-300 transition-colors duration-300">
@@ -214,7 +222,7 @@ export default function BlogSection() {
                   <p className="text-gray-200 text-sm leading-relaxed mb-4 line-clamp-3">
                     {blog.excerpt}
                   </p>
-                  
+
                   {/* Meta Information */}
                   <div className="flex items-center justify-between text-xs text-gray-300 mb-4">
                     <div className="flex items-center space-x-1">
@@ -226,7 +234,7 @@ export default function BlogSection() {
                       <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-1 text-xs text-gray-300">
                       <Eye className="h-3 w-3" />
@@ -234,10 +242,10 @@ export default function BlogSection() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Read More Button */}
                 <div className="mt-6">
-                  <Button 
+                  <Button
                     onClick={(e) => {
                       e.stopPropagation();
                       handleReadMore(blog._id);

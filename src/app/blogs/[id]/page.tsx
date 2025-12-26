@@ -89,7 +89,7 @@ export default function BlogPostPage() {
           </div>
           <h1 className="text-2xl font-bold text-white mb-4">Article Not Found</h1>
           <p className="text-gray-300 mb-6">The article you&apos;re looking for doesn&apos;t exist or has been removed.</p>
-          <Button 
+          <Button
             onClick={() => router.push('/blogs')}
             className="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg border-0"
           >
@@ -123,14 +123,22 @@ export default function BlogPostPage() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-white/20">
           {/* Hero Image */}
-          <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
-            <Image
-              src={blog.imageUrl}
-              alt={blog.title}
-              className="w-full h-full object-cover"
-              width={1920}
-              height={1080}
-            />
+          <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gray-700">
+            {blog.imageUrl && blog.imageUrl.startsWith('https://') ? (
+              <Image
+                src={blog.imageUrl}
+                alt={blog.title}
+                className="w-full h-full object-cover"
+                width={1920}
+                height={1080}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
+                <svg className="w-24 h-24 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
 
@@ -171,10 +179,10 @@ export default function BlogPostPage() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-300 mb-8 pb-6 border-b border-white/20">
               <div className="flex items-center space-x-2">
                 <Calendar className="h-4 w-4" />
-                <span>{new Date(blog.createdAt).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                <span>{new Date(blog.createdAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })}</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -193,9 +201,9 @@ export default function BlogPostPage() {
             </div>
 
             {/* Article Content */}
-            <div 
+            <div
               className="prose prose-lg sm:prose-xl max-w-none prose-headings:text-white prose-p:text-white prose-a:text-red-400 prose-strong:text-white prose-em:text-white prose-code:text-white prose-pre:text-white prose-blockquote:text-white prose-blockquote:border-l-red-400 prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-li:text-white prose-ul:text-white prose-ol:text-white prose-table:text-white prose-thead:text-white prose-tbody:text-white prose-td:text-white prose-th:text-white text-white [&_*]:text-white [&_p]:text-white [&_span]:text-white [&_div]:text-white [&_h1]:text-white [&_h2]:text-white [&_h3]:text-white [&_h4]:text-white [&_h5]:text-white [&_h6]:text-white"
-              style={{ 
+              style={{
                 color: 'white !important',
               }}
               dangerouslySetInnerHTML={{ __html: blog.content }}

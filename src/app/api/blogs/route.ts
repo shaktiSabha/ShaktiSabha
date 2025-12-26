@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       title,
       excerpt,
       content,
-      imageUrl: imageUrl || 'https://source.unsplash.com/600x400/?blog',
+      imageUrl: imageUrl || '/placeholder-blog.svg',
       author: 'Admin User',
       status
     });

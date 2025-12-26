@@ -11,27 +11,21 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  
+
   // Optimize compilation
   typescript: {
     // Skip type checking during build for faster development
     ignoreBuildErrors: false,
   },
-  
+
   // Reduce filesystem operations
   generateEtags: false,
-  
+
   // Optimize static file serving
   compress: true,
-  
+
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
       {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
@@ -41,12 +35,6 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },
@@ -68,7 +56,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  
+
   // Webpack optimizations
   webpack: (config, { dev }) => {
     if (dev) {
@@ -85,7 +73,7 @@ const nextConfig: NextConfig = {
         ],
       };
     }
-    
+
     return config;
   },
 };

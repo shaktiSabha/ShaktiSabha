@@ -46,7 +46,7 @@ const BlogsManagement = () => {
 
   const filteredBlogs = blogs.filter(blog => {
     const matchesSearch = blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = filterStatus === 'all' || blog.status === filterStatus;
     return matchesSearch && matchesStatus;
   });
@@ -57,7 +57,7 @@ const BlogsManagement = () => {
         const response = await fetch(`/api/blogs/${id}`, {
           method: 'DELETE',
         });
-        
+
         if (response.ok) {
           setBlogs(blogs.filter(blog => blog._id !== id));
         } else {
@@ -71,7 +71,7 @@ const BlogsManagement = () => {
   };
 
   const getStatusBadge = (status: string) => {
-    return status === 'published' 
+    return status === 'published'
       ? <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-300">Published</span>
       : <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-900 text-yellow-300">Draft</span>;
   };
@@ -80,7 +80,7 @@ const BlogsManagement = () => {
     const total = blogs.length;
     const published = blogs.filter(blog => blog.status === 'published').length;
     const drafts = blogs.filter(blog => blog.status === 'draft').length;
-    
+
     return { total, published, drafts };
   };
 
@@ -194,7 +194,7 @@ const BlogsManagement = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredBlogs.map((blog) => (
           <Card key={blog._id} className="bg-gray-800 border-gray-700 overflow-hidden hover:shadow-lg transition-shadow">
-            {blog.imageUrl && (
+            {blog.imageUrl && blog.imageUrl.startsWith('https://') ? (
               <div className="aspect-w-16 aspect-h-9 relative h-48">
                 <Image
                   src={blog.imageUrl}
@@ -203,13 +203,12 @@ const BlogsManagement = () => {
                   className="object-cover"
                 />
               </div>
-            )}
-            {!blog.imageUrl && (
+            ) : (
               <div className="h-48 bg-gray-700 flex items-center justify-center">
                 <ImageIcon className="h-12 w-12 text-gray-400" />
               </div>
             )}
-            
+
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
@@ -222,7 +221,7 @@ const BlogsManagement = () => {
                 </div>
                 {getStatusBadge(blog.status)}
               </div>
-              
+
               <div className="flex items-center text-xs text-gray-400 mb-4">
                 <Users className="h-4 w-4 mr-1" />
                 <span className="mr-3">By {blog.author}</span>
@@ -231,7 +230,7 @@ const BlogsManagement = () => {
                 <Eye className="h-4 w-4 mr-1" />
                 <span>{blog.views || 0} views</span>
               </div>
-              
+
               <div className="flex space-x-2">
                 <Button
                   variant="outline"
@@ -268,15 +267,15 @@ const BlogsManagement = () => {
           </Card>
         ))}
       </div>
-      
+
       {filteredBlogs.length === 0 && (
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-12 text-center">
             <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-white mb-2">No blogs found</h3>
             <p className="text-gray-400 mb-6">
-              {searchTerm || filterStatus !== 'all' 
-                ? "No blogs match your current filters." 
+              {searchTerm || filterStatus !== 'all'
+                ? "No blogs match your current filters."
                 : "Get started by creating your first blog post."
               }
             </p>

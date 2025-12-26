@@ -1,0 +1,10 @@
+const CHUNK_PUBLIC_PATH = "server/app/api/upload-image/route.js";
+const runtime = require("../../../chunks/[turbopack]_runtime.js");
+runtime.loadChunk("server/chunks/node_modules_next_b0b694._.js");
+runtime.loadChunk("server/chunks/node_modules_lodash_cf9f33._.js");
+runtime.loadChunk("server/chunks/node_modules_cloudinary_648603._.js");
+runtime.loadChunk("server/chunks/node_modules_q_q_8203cf.js");
+runtime.loadChunk("server/chunks/[root of the server]__7326c2._.js");
+runtime.loadChunk("server/chunks/_62b2e0._.js");
+runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/api/upload-image/route/actions.js [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
+module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/upload-image/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)", CHUNK_PUBLIC_PATH).exports;

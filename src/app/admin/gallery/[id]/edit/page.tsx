@@ -25,7 +25,7 @@ const EditGalleryPage = () => {
   const router = useRouter();
   const params = useParams();
   const galleryId = params.id as string;
-  
+
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
@@ -90,6 +90,19 @@ const EditGalleryPage = () => {
     const file = event.target.files?.[0];
     if (!file) return;
 
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file (PNG, JPG, GIF, etc.)');
+      return;
+    }
+
+    // Validate file size (10MB)
+    const maxSize = 10 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert('File size must be less than 10MB');
+      return;
+    }
+
     // Show preview immediately
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -100,6 +113,8 @@ const EditGalleryPage = () => {
     setUploading(true);
 
     try {
+      console.log('Starting upload:', file.name, file.size, file.type);
+
       const formDataUpload = new FormData();
       formDataUpload.append('file', file);
       formDataUpload.append('folder', 'shakti-sabha-gallery');
@@ -109,19 +124,25 @@ const EditGalleryPage = () => {
         body: formDataUpload,
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Upload failed');
+        console.error('Upload failed:', data);
+        throw new Error(data.error || data.details || 'Upload failed');
       }
 
-      const data = await response.json();
+      console.log('Upload successful:', data);
+
       setFormData(prev => ({
         ...prev,
         imageUrl: data.imageUrl,
         imagePublicId: data.publicId
       }));
-    } catch (error) {
+
+      alert('Image uploaded successfully!');
+    } catch (error: any) {
       console.error('Upload error:', error);
-      alert('Upload failed. Please try again.');
+      alert(`Upload failed: ${error.message || 'Please check console for details'}`);
       setPreviewUrl(formData.imageUrl); // Revert to original image
     } finally {
       setUploading(false);
@@ -139,7 +160,7 @@ const EditGalleryPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.title || !formData.description || !formData.imageUrl || !formData.alt) {
       alert('Please fill in all required fields and ensure an image is uploaded.');
       return;
@@ -161,7 +182,7 @@ const EditGalleryPage = () => {
       }
 
       const result = await response.json();
-      
+
       if (result.success) {
         alert('Gallery item updated successfully!');
         router.push('/admin/gallery');
@@ -210,7 +231,7 @@ const EditGalleryPage = () => {
             <ImageIcon className="h-5 w-5 text-gray-400" />
             <span className="text-sm font-medium text-gray-300">Gallery Image *</span>
           </div>
-          
+
           {previewUrl ? (
             <div className="relative w-full h-64">
               <Image
@@ -235,9 +256,9 @@ const EditGalleryPage = () => {
               <Upload className="mx-auto h-12 w-12 text-gray-400" />
               <div className="mt-4">
                 <label htmlFor="image-upload" className="cursor-pointer w-full">
-                  <Button 
-                    type="button" 
-                    variant="outline" 
+                  <Button
+                    type="button"
+                    variant="outline"
                     disabled={uploading}
                     className="w-full"
                     asChild
@@ -262,7 +283,7 @@ const EditGalleryPage = () => {
               </p>
             </div>
           )}
-          
+
           {/* Hidden file input for replacing image when preview exists */}
           {previewUrl && (
             <label htmlFor="image-replace" className="cursor-pointer">

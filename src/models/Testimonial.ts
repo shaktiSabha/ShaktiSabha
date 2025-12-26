@@ -26,7 +26,7 @@ const testimonialSchema = new mongoose.Schema({
 
   imageUrl: {
     type: String,
-    default: 'https://source.unsplash.com/150x150/?portrait'
+    default: '/placeholder-testimonial.svg'
   },
   imagePublicId: {
     type: String, // For Cloudinary image management

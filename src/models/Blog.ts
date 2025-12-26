@@ -19,7 +19,7 @@ const blogSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String,
-    default: 'https://source.unsplash.com/600x400/?blog'
+    default: '/placeholder-blog.svg'
   },
   author: {
     type: String,

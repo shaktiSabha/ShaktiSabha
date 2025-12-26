@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://D%3A/code/shakti-sabha/latest/ShaktiSabha/src/app/blogs/layout.tsx"],"sourcesContent":["import type { Metadata } from 'next';\r\n\r\nexport const metadata: Metadata = {\r\n  title: 'Blogs - Shakti Sabha',\r\n  description: 'Explore stories of women empowerment, knowledge, and transformation'\r\n};\r\n\r\nexport default function BlogsLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return <>{children}</>;\r\n}"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,YAAY,EAClC,QAAQ,EAGT;IACC,qBAAO;kBAAG;;AACZ"}},
-    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

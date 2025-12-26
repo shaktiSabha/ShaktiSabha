@@ -99,9 +99,10 @@ const NewGalleryPage = () => {
       }));
 
       alert('Image uploaded successfully!');
-    } catch (error: any) {
+    } catch (error) {
       console.error('Upload error:', error);
-      alert(`Upload failed: ${error.message || 'Please check console for details'}`);
+      const errorMessage = error instanceof Error ? error.message : 'Please check console for details';
+      alert(`Upload failed: ${errorMessage}`);
       setPreviewUrl(null);
     } finally {
       setUploading(false);

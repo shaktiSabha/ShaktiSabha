@@ -88,20 +88,24 @@ export async function POST(request: NextRequest) {
       imageUrl: result.secure_url,
       publicId: result.public_id,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Upload error:', error);
 
     // Provide more specific error messages
     let errorMessage = 'Failed to upload image';
-    if (error.message) {
+    const errorDetails = error instanceof Error ? error.message : 'Unknown error';
+
+    if (error instanceof Error && error.message) {
       errorMessage += `: ${error.message}`;
     }
-    if (error.http_code) {
-      errorMessage += ` (HTTP ${error.http_code})`;
+
+    // Check for Cloudinary-specific error properties
+    if (typeof error === 'object' && error !== null && 'http_code' in error) {
+      errorMessage += ` (HTTP ${(error as { http_code: number }).http_code})`;
     }
 
     return NextResponse.json(
-      { error: errorMessage, details: error.message },
+      { error: errorMessage, details: errorDetails },
       { status: 500 }
     );
   }
